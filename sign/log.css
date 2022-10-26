@@ -1,0 +1,32 @@
+ .container-fluid h2{
+    font-size: 22px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 20px;    
+    
+}
+.nav-bar{
+    height: 42px;
+    background-color: rgb(30, 86, 191);
+}
+#bizerte{
+    color: rgb(26, 18, 18);
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#h2-col2{
+    font-size: 22px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 20px; 
+    float: right ; 
+    margin-right: 100px;  
+}
