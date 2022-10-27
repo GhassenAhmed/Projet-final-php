@@ -1,4 +1,4 @@
- .container-fluid h2{
+.container-fluid h2{
     font-size: 22px;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-style: oblique;
@@ -43,13 +43,9 @@
 }
 h3{
     color: black;
-    font-size: 30px;
+    font-size: 20px;
     font-family:'Courier New', Courier, monospace;
     font-weight: bolder;
     text-align: center;
     font-style: italic;
-}
-a{
-    text-decoration: none;
-    color: black;
 }
