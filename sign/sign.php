@@ -11,23 +11,8 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     <title>Sign/Log</title>
 </head>
 <body>
-    <?php
-    include 'db_connect.php';
-    if(!empty($_POST)){
-        $email=$_POST['email'];
-        $mot_de_passe=$_POST['mot de passe'];
-        $confirm=$_POST['confirm'];
-        $sql='INSERT INTO inscrit (email,mot de passe,confirm) values(?,?,?)';
-        $query=$pdo->prepare($sql);
-        $query->execute([$email,$mot_de_passe,$confirm]);
-        header('location:sign.php');
-         exit;
 
-        
-    }
-    
    
-    ?>
     <div class="row">
         <nav class="navbar bg-primary">
             <div class="col container-fluid">
@@ -41,7 +26,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     </div>
 
     <div class="row">
-        <form class="form" action="" methode="post" novalidate>
+        <form class="form" action="test_signup.php" method="post" novalidate>
                              <!-- --------------------title --------------------------->
 
             <div class="mb-3 container-fluid">
@@ -57,21 +42,27 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </div>
                             <!-- --------------------password --------------------------->
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label" name="mot de passe" required>Mot de passe</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-
+                <label  class="form-label"  required>Mot de passe</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                            <!-- --------------------confirm password --------------------------->
                     <div id="confirm" >
-                        <label for="exampleInputPassword1" class="form-label" name="confirm" required>confirm mot de passe</label>
-                        <input type="password" class="form-control" >
+                        <label  class="form-label"  required>confirm mot de passe</label>
+                        <input type="password" class="form-control" name="password_confirm" >
+                     
                     </div>
             </div>
+            <?php if(count($error)>0) :?>
+                <div class="alert alert-danger">
+                    <?= $error[0] ?>
+                </div>
+                <?php endif;?>
                             <!-- --------------------check--------------------------->
             
                             <!-- --------------------button --------------------------->
-            <button type="submit" class="btn btn-primary">Inscrit</button>
+            <button type="submit" name="send" class="btn btn-primary">Inscrit</button>
         </form>
     </div>
-    <script src="log.js"></script>
+    
     
     <script src="https://kit.fontawesome.com/c5bebe1cfa.js" crossorigin="anonymous"></script>
 </body>
