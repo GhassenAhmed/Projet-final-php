@@ -1,6 +1,6 @@
 <?php
-    include 'db_connect.php';
-      $error=[];
+    require_once '../sign/db_connect.php';
+      $error=array();
     if(isset($_POST['send'])){
         extract($_POST);
         if(empty($email) && empty($password) && empty($password_confirm)){
@@ -25,6 +25,8 @@
         $sql=" INSERT INTO inscrit (email,password,password_confirm) VALUES (?,?,?)";
         $query=$pdo->prepare($sql);
         $query->execute([$email,$password,$password_confirm]);
+        header("location:../sign/log.phtml");
+        exit;
         }
     }
     shoform:

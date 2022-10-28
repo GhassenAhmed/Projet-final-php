@@ -26,7 +26,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     </div>
 
     <div class="row">
-        <form class="form" action="test_signup.php" method="post" novalidate>
+        <form class="form" action="index.php" method="post" novalidate>
                              <!-- --------------------title --------------------------->
 
             <div class="mb-3 container-fluid">
@@ -51,11 +51,11 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                      
                     </div>
             </div>
-            <?php if(count($error)>0) :?>
+            <?php if(count($error)>0) : ?>
                 <div class="alert alert-danger">
                     <?= $error[0] ?>
                 </div>
-                <?php endif;?>
+             <?php endif; ?>
                             <!-- --------------------check--------------------------->
             
                             <!-- --------------------button --------------------------->
