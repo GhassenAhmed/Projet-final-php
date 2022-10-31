@@ -24,7 +24,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     </div>
 
     <div class="row">
-        <form class="form">
+        <form class="form" method="post" action="testlog.php">
                              <!-- --------------------title --------------------------->
 
             <div class="mb-3 container-fluid">
@@ -33,14 +33,14 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </div>
                             <!-- --------------------email --------------------------->
             <div class="mb-3">
-                <label  class="form-label">Utilisateur</label>
-                <input type="text" class="form-control" id="exampleInputEmail1"  aria-describedby="emailHelp" required>
+                <label  class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" required>
                 <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre .</div>
             </div>
                             <!-- --------------------password --------------------------->
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label" required>Mot de passe</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" class="form-control" name="password">
 
                 <div id="emailHelp" class="form-text">Mot de passe oublié ? <a href="" style="text-decoration:none;">Cliquez ici</a></div>
             </div>
@@ -50,7 +50,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <label class="form-check-label" for="exampleCheck1">Enregistrer</label>
             </div>
                             <!-- --------------------button --------------------------->
-            <button type="submit" class="btn btn-primary">Signez</button>
+            <button type="submit" class="btn btn-primary" name="send">Signez</button>
         </form>
     </div>
     
