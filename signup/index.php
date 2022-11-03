@@ -33,6 +33,6 @@
         }
     }
     shoform:
-    include "sign.php";
+    include "sign.phtml";
 
 ?>

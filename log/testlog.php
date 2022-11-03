@@ -8,7 +8,7 @@ if(isset($_POST['send'])){
     var_dump($email);
     var_dump($password);
     if($email=='admin@gmail.com' && $password=='admin')
-    header('location:../layout');
+    header('location:../iset');
     else
     echo'welcome user';
 }
