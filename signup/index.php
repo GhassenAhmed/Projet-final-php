@@ -25,7 +25,7 @@
             $error[0]=" Remplissez votre email ";
             goto shoform;
         }else{
-        $sql=" INSERT INTO inscrit (email,password,password_confirm) VALUES (?,?,?)";
+        $sql="INSERT INTO inscrit (email,password,password_confirm) VALUES (?,?,?)";
         $query=$pdo->prepare($sql);
         $query->execute([$email,$password,$password_confirm]);
         header("location:../log/log.phtml");
