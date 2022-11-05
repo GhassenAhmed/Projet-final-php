@@ -31,17 +31,17 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 
                 <li><a href="#">
                     <i class="fas fa-wallet"></i>
-                    <span class="nav-item">Wallet</span>
+                    <span class="nav-item">Departement</span>
                 </a></li>
 
                 <li><a href="#">
                     <i class="fas fa-chart-bar"></i>
-                    <span class="nav-item">Analytics</span>
+                    <span class="nav-item">Etudiant</span>
                 </a></li>
 
                 <li><a href="#">
                     <i class="fas fa-tasks"></i>
-                    <span class="nav-item">Tasks</span>
+                    <span class="nav-item">Enseingant</span>
                 </a></li>
 
                 <li><a href="#">
