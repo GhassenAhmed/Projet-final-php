@@ -11,6 +11,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     <title>log</title>
 </head>
 <body>
+   
     <div class="row">
         <nav class="navbar bg-primary">
             <div class="col container-fluid">
@@ -24,18 +25,19 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     </div>
 
     <div class="row">
-        <form class="form" method="post" action="testlog.php">
+        <div class="col">
+        <form class="form" method="post" action="index.php">
                              <!-- --------------------title --------------------------->
 
             <div class="mb-3 container-fluid">
                 
                 <button type="button" class="btn btn-info" style="float:right;margin-bottom:20px;" id="btn_inscrit" ><a href="../signup">S'inscrire</a></button>
             </div>
-                            <!-- --------------------email --------------------------->
+                            <!-- --------------------utilisateur --------------------------->
             <div class="mb-3">
-                <label  class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" required>
-                <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre .</div>
+                <label  class="form-label">Nom Utilisateur</label>
+                <input type="text" class="form-control" name="utilisateur" required>
+                <div  class="form-text">Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre .</div>
             </div>
                             <!-- --------------------password --------------------------->
             <div class="mb-3">
@@ -52,6 +54,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                             <!-- --------------------button --------------------------->
             <button type="submit" class="btn btn-primary" name="send">Signez</button>
         </form>
+        </div>
     </div>
     
     

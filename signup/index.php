@@ -3,16 +3,16 @@
       $error=array();
     if(isset($_POST['send'])){
         extract($_POST);
-        if(empty($email) && empty($password) && empty($password_confirm)){
+        if(empty($utilisateur) && empty($password) && empty($password_confirm)){
            $error[0]="Remplissez tous les champs !";
            goto shoform;
         }
-        else if(empty($email)&&empty($password)){
+        else if(empty($utilisateur)&&empty($password)){
             $error[0]=" Remplissez le mot de passe  ";
             goto shoform;
         }
-        else if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-            $error[0]="email invalid";
+        else if(empty($utilisateur)){
+            $error[0]="Remplissez le nom ";
             goto shoform;
         }else if($password!=$password_confirm){
             $error[0]="confirmer votre mot de passe";
@@ -21,13 +21,13 @@
             $error[0]="Remplissez le mot de passe";
             goto shoform;
         }
-        else if(empty($email)){
-            $error[0]=" Remplissez votre email ";
+        else if(empty($utilisateur)){
+            $error[0]=" Remplissez votre utilisateur ";
             goto shoform;
         }else{
-        $sql="INSERT INTO inscrit (email,password,password_confirm) VALUES (?,?,?)";
+        $sql="INSERT INTO inscrit (utilisateur,password,password_confirm) VALUES (?,?,?)";
         $query=$pdo->prepare($sql);
-        $query->execute([$email,$password,$password_confirm]);
+        $query->execute([$utilisateur,$password,$password_confirm]);
         header("location:../log/log.phtml");
         exit;
         }
