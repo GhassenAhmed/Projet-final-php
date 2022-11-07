@@ -37,7 +37,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="mb-3">
                 <label  class="form-label">Utilisateur</label>
                 <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="utilisateur" required>
-                <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre .</div>
+                <div id="emailHelp" class="form-text">Caracteres et numeros seulement !</div>
             </div>
                             <!-- --------------------password --------------------------->
             <div class="mb-3">
@@ -50,12 +50,13 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                      
                     </div>
             </div>
-            <?php if(count($error)>0) : ?>
+            <!--<?php /*if(count($error)>0) : ?>
                 <div class="alert alert-danger">
                     <?= $error[0] ?>
                 </div>
-             <?php endif; ?>
-                            <!-- --------------------check--------------------------->
+             <?php endif*/; ?>---->
+
+                            <!----------------------check--------------------------->
             
                             <!-- --------------------button --------------------------->
             <button type="submit" name="send" class="btn btn-primary">Inscrit</button>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,11 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     <title>Iset</title>
 </head>
 <body>
+    <?php 
+    $utilisateur=$_GET['utilisateur'];
+   var_dump($utilisateur);
+    
+    ?>
     <div class="row">
     <div class="container">
         <nav>

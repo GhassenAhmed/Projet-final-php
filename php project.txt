@@ -1,7 +1,7 @@
 login + sign : add logo + paragraphe + icons + pattern input condition + enregistrement du contenu du champs lorsque un erreur etabli
-sign : add button->log
-sign + log : changer email par "nom utilisateur" + changement du table base de donne + code php
-sign : add condition du mot de pass : length + contenu chiffre
+sign : add button->log **
+sign + log : changer email par "nom utilisateur" + changement du table base de donne + code php **
+sign : add condition du mot de pass : length + contenu chiffre **
 log : mot de passe (oublié)
 
 
