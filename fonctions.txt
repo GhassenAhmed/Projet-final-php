@@ -1,0 +1,8 @@
+filter($email,FILTER_VALIDATE_EMAIL) ======> check valid email
+
+preg_match =====> pattern : condition du caracteres
+
+password_hash =====> secure password : send random password to data base for security
+
+password_verify ==========> verifier password avec password data base
+
