@@ -35,7 +35,7 @@ section {
    padding-bottom: 10px;
    border-spacing: 5px;
    margin-left: 5px;
-   font-family:Georgia, 'Times New Roman', Times, serif;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
    letter-spacing: 1px;
    text-align: center;
    font-weight: bolder;
@@ -79,3 +79,5 @@ article h4{
       font-size: 10px;
     }
   }
+
+  

@@ -12,6 +12,10 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     <title>Iset</title>
 </head>
 <body>
+    <?php 
+     require_once '../connexion db/db_connect.php';
+     $userName=$_GET['utilisateur'];
+    ?>
    <section>
 
     <nav>
@@ -71,42 +75,17 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </div>
 
             <div class="col">
-                <h4 >User</h4>
+                <h4 ><span style='color : darkblue;margin-right:10px;'><?= $userName?></span><i class="fa-solid fa-user"></i></h4>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                </div>
-            </div>
-            <div class="col">
-                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-            </div>
+       
+        <div class="row row-cols-3 row-cols-md-3 row-cols-lg-2 row-cols-xl-4 row-cols-sm-1" >
+            <div class="col ">column1</div>
+            <div class="col ">column1</div>
+            <div class="col">column1</div>
+            <div class="col">ghasssen </div>
         </div>
+       
     </article>
    </section>
 
