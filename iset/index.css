@@ -70,6 +70,8 @@ article h4{
     font-weight: bolder;
     color: #2B4865;
     float: right;
+   
+    background-color: #fff;
 }
 
   @media (max-width: 600px) {
@@ -78,6 +80,3 @@ article h4{
       flex-direction: column;
       font-size: 10px;
     }
-  }
-
-  
