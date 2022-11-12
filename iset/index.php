@@ -79,11 +79,9 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </div>
         </div>
        
-        <div class="row row-cols-3 row-cols-md-3 row-cols-lg-2 row-cols-xl-4 row-cols-sm-1" >
-            <div class="col ">column1</div>
-            <div class="col ">column1</div>
-            <div class="col">column1</div>
-            <div class="col">ghasssen </div>
+        <div class="row row-cols-2 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1" style='margin-top:100px;'>
+            <div class="col "><img src="../assets/iset2.jpg" alt="" width='450px' style='border: 1px solid #ddd;border-radius: 4px;padding: 5px;'></div>
+            <div class="col " style='background-color: #fff;border-radius:15px;margin-right:0px'><p style='padding-top:100px;'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam nihil sapiente soluta? Suscipit quis quasi asperiores ducimus maiores placeat.</p></div>
         </div>
        
     </article>
