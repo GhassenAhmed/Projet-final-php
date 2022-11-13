@@ -21,13 +21,13 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     <nav>
         <ul>
         <li id="h3"><a href="#" class="logo">
-                <h3>School Management</h3>
+                <h3>Gestion d'institut</h3>
                 
             </a></li>
 
             <li><a href="#">
                 <i class="fas fa-home"></i>
-                <span class="nav-item">home</span>
+                <span class="nav-item">Accueill</span>
             </a></li>
 
             <li><a href="#">
@@ -52,12 +52,12 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 
             <li><a href="#">
                 <i class="fas fa-cog"></i>
-                <span class="nav-item">Settings</span>
+                <span class="nav-item">Parametres</span>
             </a></li>
 
             <li><a href="#">
                  <i class="fas fa-question-circle"></i>
-                <span class="nav-item">Help</span>
+                <span class="nav-item">Aide</span>
             </a></li>
 
             <li class="logout"><a href="" >
@@ -70,18 +70,12 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 
     <article >
         <div class="row">
-            <div class="col">
-                <h3>School Management System  <i class="fa-solid fa-screwdriver-wrench"></i></h3>
-            </div>
-
-            <div class="col">
-                <h4 ><span style='color : darkblue;margin-right:10px;'><?= $userName?></span><i class="fa-solid fa-user"></i></h4>
-            </div>
+            
         </div>
        
-        <div class="row row-cols-2 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1" style='margin-top:100px;'>
-            <div class="col "><img src="../assets/iset2.jpg" alt="" width='450px' style='border: 1px solid #ddd;border-radius: 4px;padding: 5px;'></div>
-            <div class="col " style='background-color: #fff;border-radius:15px;margin-right:0px'><p style='padding-top:100px;'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ullam nihil sapiente soluta? Suscipit quis quasi asperiores ducimus maiores placeat.</p></div>
+        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1" >
+           <h3>Systeme de gestion</h3>
+           <span ><i class="fa-regular fa-user"></i> <?=$userName?></span>
         </div>
        
     </article>

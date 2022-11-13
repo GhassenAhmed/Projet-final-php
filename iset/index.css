@@ -48,7 +48,7 @@ section {
     -webkit-flex: 3;
     -ms-flex: 3;
     flex: 3;
-    background-color: #dfe9f5;
+    
     padding: 10px;
   }
   .logout{
@@ -63,16 +63,7 @@ section {
     margin-top: 10px;
     
   }
-article h4{
-    font-size: 20px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-style: oblique;
-    font-weight: bolder;
-    color: #2B4865;
-    float: right;
-   
-    background-color: #fff;
-}
+
 
   @media (max-width: 600px) {
     section {
@@ -80,3 +71,4 @@ article h4{
       flex-direction: column;
       font-size: 10px;
     }
+  }
