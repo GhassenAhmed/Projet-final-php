@@ -5,13 +5,11 @@ section {
     display: -webkit-flex;
     display: flex;
   }
-  
-
   nav {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background: #fff; 
+    background: #dfe9f5; 
     padding-bottom: 90px;
     
   }
@@ -48,7 +46,7 @@ section {
     -webkit-flex: 3;
     -ms-flex: 3;
     flex: 3;
-    
+    background-color: #fff;
     padding: 10px;
   }
   .logout{
@@ -61,9 +59,7 @@ section {
     font-weight: bolder;
     color: #2B4865;
     margin-top: 10px;
-    
   }
-
 
   @media (max-width: 600px) {
     section {
