@@ -18,7 +18,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     ?>
    <section>
 
-    <nav>
+    <nav  style='background: #dfe9f5;'>
         <ul>
         <li id="h3"><a href="#" class="logo">
                 <h3>Gestion d'institut</h3>
@@ -73,9 +73,33 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             
         </div>
        
-        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1" >
-           <h3>Systeme de gestion</h3>
+        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1">
+            <div class="header">
+            <h3>Systeme de gestion</h3>
            <span ><i class="fa-regular fa-user"></i> <?=$userName?></span>
+            </div>
+
+        </div>
+        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1">
+            <div class="header">
+            <h3>Systeme de gestion</h3>
+           <span ><i class="fa-regular fa-user"></i> <?=$userName?></span>
+            </div>
+            
+        </div>
+        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1">
+            <div class="header">
+            <h3>Systeme de gestion</h3>
+           <span ><i class="fa-regular fa-user"></i> <?=$userName?></span>
+            </div>
+            
+        </div>
+        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1">
+            <div class="header">
+            <h3>Systeme de gestion</h3>
+           <span ><i class="fa-regular fa-user"></i> <?=$userName?></span>
+            </div>
+            
         </div>
        
     </article>
