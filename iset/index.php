@@ -73,34 +73,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             
         </div>
        
-        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1">
-            <div class="header">
-            <h3>Systeme de gestion</h3>
-           <span ><i class="fa-regular fa-user"></i> <?=$userName?></span>
-            </div>
-
-        </div>
-        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1">
-            <div class="header">
-            <h3>Systeme de gestion</h3>
-           <span ><i class="fa-regular fa-user"></i> <?=$userName?></span>
-            </div>
-            
-        </div>
-        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1">
-            <div class="header">
-            <h3>Systeme de gestion</h3>
-           <span ><i class="fa-regular fa-user"></i> <?=$userName?></span>
-            </div>
-            
-        </div>
-        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-sm-1">
-            <div class="header">
-            <h3>Systeme de gestion</h3>
-           <span ><i class="fa-regular fa-user"></i> <?=$userName?></span>
-            </div>
-            
-        </div>
+       
        
     </article>
    </section>
