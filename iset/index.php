@@ -73,7 +73,10 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             
         </div>
        
-       
+       <div class="header">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio laudantium provident ratione.
+       </div>
+       <div class="nav">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo ipsum corrupti eius harum saepe ea!</div>
        
     </article>
    </section>
