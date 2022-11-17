@@ -1,30 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<!-- CSS only -->
-    <link  rel="stylesheet" href="index.css">
-    <title>Iset</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="accueil.css">
+    <title>Accueil</title>
 </head>
 <body>
     <?php 
      require_once '../connexion db/db_connect.php';
      $userName=$_GET['utilisateur'];
     ?>
-   <section>
-
-    <nav  style='background: #dfe9f5;'>
+    <div class="sidebar">
+        <div class="sidebar-title">
+            <h3>Gestion Institut</h3>
+        </div>
+        <div class="sidebar-menu">
         <ul>
-        <li id="h3"><a href="#" class="logo">
-                <h3>Gestion d'institut</h3>
-                
-            </a></li>
-
             <li><a href="#">
                 <i class="fas fa-home"></i>
                 <span class="nav-item">Accueill</span>
@@ -64,27 +61,21 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <i class="fas fa-sign-out-alt"></i>
                 <span class="nav-item">Logout</span>
             </a></li>
-        </ul>   
         </ul>
-    </nav>
-
-    <article >
-        <div class="row">
-            
         </div>
-       
-       <div class="header">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio laudantium provident ratione.
-       </div>
-       <div class="nav">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo ipsum corrupti eius harum saepe ea!</div>
-       
-    </article>
-   </section>
-
-   <footer>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nihil soluta quas hic ab eaque est magnam et repellat sit!
-   </footer>
-
+    </div>
+    <div class="main-content">
+        <header>
+            <h1><span class="menu-icon"><i class="fa-solid fa-bars"></i></span>Dashboard</h1>
+            <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $userName?> <span class="arrow"><i class="fa-solid fa-arrow-down"></i></span></h3>
+        </header>
+        <div class="main">
+            <p class="alert"><strong>Bienvenue a votre admin <span class="dash-p">Dashboard</span></strong> <span class="close"><i class="fa-solid fa-xmark"></i></span></p>
+           
+        </div>
+    </div>
+    
+    
     <script src="https://kit.fontawesome.com/c5bebe1cfa.js" crossorigin="anonymous"></script>
 </body>
 </html>

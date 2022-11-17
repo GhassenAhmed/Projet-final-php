@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: 'Poppins',sans-serif;
+   
+}
+a{
+    text-decoration: none;
+}
+/********************aside*********************/
+.sidebar{
+    width: 345px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #DFE9F5;
+    z-index: 100;
+}
+.sidebar-menu li{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.sidebar-title h3{
+    text-align: center;
+    margin-top: 1rem;
+    color: #002B5B;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+    padding-bottom: 50px;
+    padding-top: 1rem;
+    
+}
+.sidebar-menu a{
+    color:#002B5B;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.sidebar-menu a:first-child{
+    font-size: 1.5rem;
+    padding-right: 2rem;
+}
+.nav-item{
+    padding-left: 1rem;
+}
+.main-content{
+    margin-left: 345px;
+}
+.sidebar-menu li:first-child{
+    background-color: #fff;
+    border-radius: 50px 0px 0px 50px;
+    padding: 5px 5px 5px 5px;
+}
+/****************section*************/
+header{
+    display:flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    padding-bottom: 47px;
+    position: fixed;
+    left:345px;
+    width:calc(100% - 345px);
+    top: 0;
+    z-index: 100;
+}
+header h1{
+    font-size: 30px;
+    margin-top:1rem;
+    margin-left: 1rem;
+    letter-spacing: 2px;
+}
+header .menu-icon{
+    margin-right: 1rem;
+}
+header h3{
+    font-size: 30px;
+    margin-top:1rem;
+    margin-right:1rem;
+    letter-spacing: 2px;
+}
+header .user{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+/******************main*******************/
+.main{
+    margin-top: 123px;
+    padding: 2rem  1.5rem;
+    background: #f1f5f9;
+    min-height: calc(100vh - 123px);
+    
+}
+.main p{
+    background: #CDF0EA;
+    color: #002B5B;
+}
+.main .dash-p{
+    letter-spacing: 1px;
+}
+.main .close{
+    float: right;
+    
+}
+
