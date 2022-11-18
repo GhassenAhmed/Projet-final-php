@@ -64,88 +64,82 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
         </ul>
         </div>
     </div>
-    
-   <!-- <header class="position-relative w-100">
-            <h1><label for="nav-toggle"><i class="fa-solid fa-bars" style='padding-right:10px;'></i></label>Dashboard</h1>
-            <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $userName?> <span class="arrow"><i class="fa-solid fa-arrow-down"></i></span></h3>
-        </header>-->
     <div class="main-content">
             <div class="p-3 header_admin " style='background:#fff;'> 
-                <button class="btn btn-outline-dark mx-1"  id="btn1"><i class="fa-solid fa-list"></i></button>
+                <button class="btn btn-outline-primary mx-1"  id="btn1"><i class="fa-solid fa-list"></i></button>
                 <div class="float-end">
             <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $userName?> <span class="arrow"><i class="fa-solid fa-arrow-down"></i></span></h3>
             </div>
     </div> 
         <div class="main p-5 m-5">
             <main>
-                <div class="row" >
+                <div class="row">
 
-                    <div class="col-md-4 px-3 py-4">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 px-3 py-4">
                         <!--- Profile card------------------>
                         <div class="card" style="width: 18rem;">
                             <img src="../assets/profile2.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Profile</h5>
-                                <span class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</span>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <span class="card-text"> Bienvenue <strong><?= $userName?> </strong>! <br>Voir votre profil !</span>
+                                <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 py-4">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 py-4  ">
                         <!--- Departement card card------------------>
                             <div class="card" style="width: 18rem;">
                                 <img src="../assets/departement2.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Departement</h5>
-                                    <span class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</span>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <span class="card-text">5 Departement <br>Voir les departements </span>
+                                    <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>
-                    <div class="col-md-4 py-4">
+                    <div class="col-md-8  col-lg-6 col-xl-5 col-xxl-4 py-4  ">
                         <!--- Etuduiant card card------------------>
                             <div class="card" style="width: 18rem;">
                                 <img src="../assets/etudiant2.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Etuduiant</h5>
-                                    <span class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</span>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <span class="card-text">200 Etudiants<br>Voir tous les Etudiants</span>
+                                    <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>
-                </div>
-                <div class="row" >
+                
 
-                    <div class="col-md-4 px-3">
+                    <div class="col-md-8  col-lg-6 col-xl-5 col-xxl-4 px-3 py-4 ">
                         <!--- Enseignant card------------------>
                         <div class="card" style="width: 18rem;">
                             <img src="../assets/prof.jpg" class="card-img-top" height='285px'>
                             <div class="card-body">
-                                <h5 class="card-title">Profile</h5>
-                                <span class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</span>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Enseignant</h5>
+                                <span class="card-text">50 Enseignants<br>Voir tous les Enseignants</span>
+                                <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4  px-3 py-4">
                         <!--- Parametre card card------------------>
                             <div class="card" style="width: 18rem;">
                                 <img src="../assets/parametre.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Departement</h5>
-                                    <span class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</span>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <h5 class="card-title">Parametres</h5>
+                                    <span class="card-text">Parametres<br>Voir parametres</span>
+                                    <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 px-3 py-4">
                         <!--- aide card------------------>
                             <div class="card" style="width: 18rem;">
                                 <img src="../assets/help.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Etuduiant</h5>
-                                    <span class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</span>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <h5 class="card-title">Aide</h5>
+                                    <span class="card-text">Aide<br>Voir Aide</span>
+                                    <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>
