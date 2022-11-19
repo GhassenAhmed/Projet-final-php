@@ -5,7 +5,7 @@
         require '../connexion db/db_connect.php';
         extract($_POST);
 
-        if(empty($utilisateur) && empty($password) && empty($password_confirm)){
+        if(empty($utilisateur) && empty($password) && empty($password_confirm)&& empty($numeroTel)){
            header("location:sign.phtml?error=champsvides");
            $error[0]="Remplissez vos champs SVP !";
            exit();
@@ -14,7 +14,11 @@
             header("location:sign.phtml?error=invalid_utilisateur");
             exit();
         }
-        else if(!preg_match("/^[a-zA-Z0-9]*$/",$utilisateur)&&empty($password)&&empty($password_confirm)){
+        else if(!preg_match("/^[0-9]*$/",$numeroTel)){
+            header("location:sign.phtml?error=invalid_numeroTel");
+            exit();
+        }
+        else if(!preg_match("/^[a-zA-Z0-9]*$/",$utilisateur)&&!preg_match("/^[0-9]{2}-[0-9]{3}-[0-9]{3}*$/",$numeroTel)&&empty($password)&&empty($password_confirm)){
             header("location:sign.phtml?error=invalid_utilisateur");
             exit();
         }
@@ -32,9 +36,9 @@
             exit();
         }else {
         
-        $sql="INSERT INTO inscrit (utilisateur,password,password_confirm) VALUES (?,?,?)";
+        $sql="INSERT INTO inscrit (utilisateur,numeroTel,password,password_confirm) VALUES (?,?,?,?)";
         $query=$pdo->prepare($sql);
-        $query->execute([$utilisateur,$password,$password_confirm]);
+        $query->execute([$utilisateur,$numeroTel,$password,$password_confirm]);
         header("location:../log/log.phtml?signup=succes");
         exit();
           }

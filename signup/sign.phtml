@@ -33,11 +33,17 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 
                 <button type="button" class="btn btn-info" style="float:right;margin-bottom:20px;" id="btn_inscrit" ><a href="../log"  style="text-decoration:none;color:black;" >Login</a></button>
             </div>
-                            <!-- --------------------email --------------------------->
+                            <!-- --------------------Utilisateur --------------------------->
             <div class="mb-3">
                 <label  class="form-label">Utilisateur</label>
                 <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="utilisateur" required>
                 <div id="emailHelp" class="form-text">Caracteres et numeros seulement !</div>
+            </div>
+             <!-- --------------------numeroTel--------------------------->
+            <div class="mb-3">
+                <label  class="form-label">Numero Telephone</label>
+                <input type="tel" class="form-control"  pattern="[0-9]{8}" title="SVP le nom doit avoir caracteres et nombres seulement" name="numeroTel" max="8" min="8" required>
+                <div  class="form-text">numeros seulement !</div>
             </div>
                             <!-- --------------------password --------------------------->
             <div class="mb-3">

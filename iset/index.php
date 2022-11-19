@@ -66,7 +66,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     </div>
     <div class="main-content">
             <div class="p-3 header_admin " style='background:#fff;'> 
-                <button class="btn btn-outline-primary mx-1"  id="btn1"><i class="fa-solid fa-list"></i></button>
+                <button class="btn btn-outline-info mx-1"  id="btn1"><i class="fa-solid fa-list"></i></button>
                 <div class="float-end">
             <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $userName?> <span class="arrow"><i class="fa-solid fa-arrow-down"></i></span></h3>
             </div>
