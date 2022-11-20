@@ -6,3 +6,5 @@ password_hash =====> secure password : send random password to data base for sec
 
 password_verify ==========> verifier password avec password data base
 
+sql :
+

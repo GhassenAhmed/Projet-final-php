@@ -82,7 +82,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <div class="row">
 
                 
-                <form class="form" action="index.php" method="post" novalidate>
+                <form class="form" action="traitement.php" method="post" novalidate>
                              <!-- --------------------title --------------------------->
                             <!-- --------------------Utilisateur --------------------------->
             <div class="mb-3">
@@ -93,7 +93,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
              <!-- --------------------numeroTel--------------------------->
             <div class="mb-3">
                 <label  class="form-label">Numero Telephone</label>
-                <input type="tel" class="form-control"  pattern="[0-9]{8}" title="SVP le nom doit avoir caracteres et nombres seulement" name="numeroTel" max="8" min="8" required value="<?=$profile[0]['numeroTel']?>">
+                <input type="tel" class="form-control"  pattern="[0-9]{8}" title="SVP le nom doit avoir caracteres et nombres seulement" name="numero" max="8" min="8" required value="<?=$profile[0]['numero']?>">
                 <div  class="form-text">numeros seulement !</div>
             </div>
                             <!-- --------------------password --------------------------->

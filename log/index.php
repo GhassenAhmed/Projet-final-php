@@ -1,26 +1,28 @@
 <?php
 session_start();
+
+
 if(isset($_POST['send'])){
     require_once '../connexion db/db_connect.php';
     extract($_POST);
     $_SESSION['utilisateur']=$_POST['utilisateur'];
     $_SESSION['password']=$_POST['password'];
-    if(empty($_SESSION['ustilisateur'])&&empty($_SESSION['password'])){
+    if(empty($_POST['utilisateur'])&&empty($_POST['password'])){
         header("location:log.phtml?error=champsvides");
         exit();
-    }else if(empty($_SESSION['ustilisateur']) || empty($_SESSION['password'])){
+    }else if(empty($_POST['utilisateur']) || empty($_POST['password'])){
         header("location:log.phtml?error=champsvides");
         exit();
     }else{
         $sql="SELECT * FROM inscrit WHERE utilisateur=? AND password=?";
         $query=$pdo->prepare($sql);
-        $query->execute([$_SESSION['ustilisateur'],$_SESSION['password']]);
+        $query->execute([$_POST['utilisateur'],$_POST['password']]);
         $check=$query->fetchAll();
         
 
         /**/
         if(!empty($check)){
-            header("location:../iset/accueil/index.php?utilisateur=".$_SESSION['ustilisateur']);
+            header("location:../iset/accueil/index.php?utilisateur=".$_POST['utilisateur']);
             exit();
             /*$pwdCheck=password_verify($password,$check['password']);*/
            

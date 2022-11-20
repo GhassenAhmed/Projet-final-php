@@ -5,12 +5,12 @@
         require '../connexion db/db_connect.php';
         extract($_POST);
 
-        if(empty($utilisateur) && empty($password) && empty($password_confirm)&& empty($numeroTel)&& empty($clef)&& empty($courriel)&& empty($prenom)&& empty($nom)){
+        if(empty($utilisateur) && empty($password) && empty($password_confirm)&& empty($numero)&& empty($clef)&& empty($courriel)&& empty($prenom)&& empty($nom)){
            header("location:sign.phtml?error=champsvides");
            $error[0]="Remplissez vos champs SVP !";
            exit();
         }
-        else if(empty($utilisateur) || empty($password) || empty($password_confirm) || empty($numeroTel)|| empty($clef)|| empty($courriel)|| empty($prenom)|| empty($nom)){
+        else if(empty($utilisateur) || empty($password) || empty($password_confirm) || empty($numero)|| empty($clef)|| empty($courriel)|| empty($prenom)|| empty($nom)){
             header("location:sign.phtml?error=champsvides");
             $error[0]="Remplissez vos champs SVP !";
             exit();
@@ -19,11 +19,11 @@
             header("location:sign.phtml?error=invalid_utilisateur");
             exit();
         }
-        else if(!preg_match("/^[0-9]*$/",$numeroTel)){
+        else if(!preg_match("/^[0-9]*$/",$numero)){
             header("location:sign.phtml?error=invalid_numeroTel");
             exit();
         }
-        else if(!preg_match("/^[a-zA-Z0-9]*$/",$utilisateur)&&!preg_match("/^[0-9]{2}-[0-9]{3}-[0-9]{3}*$/",$numeroTel)&&empty($password)&&empty($password_confirm)){
+        else if(!preg_match("/^[a-zA-Z0-9]*$/",$utilisateur)&&!preg_match("/^[0-9]{2}-[0-9]{3}-[0-9]{3}*$/",$numero)&&empty($password)&&empty($password_confirm)){
             header("location:sign.phtml?error=invalid_utilisateur");
             exit();
         }
@@ -41,9 +41,9 @@
             exit();
         }else {
         
-        $sql="INSERT INTO inscrit (utilisateur,numeroTel,password,password_confirm,clef,courriel,prenom,nom,ville,pays) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $sql="INSERT INTO inscrit (utilisateur,numero,password,password_confirm,clef,courriel,prenom,nom,ville,pays) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $query=$pdo->prepare($sql);
-        $query->execute([$utilisateur,$numeroTel,$password,$password_confirm,$clef,$courriel,$prenom,$nom,$ville,$pays]);
+        $query->execute([$utilisateur,$numero,$password,$password_confirm,$clef,$courriel,$prenom,$nom,$ville,$pays]);
         header("location:../log/log.phtml?signup=succes");
         exit();
           }

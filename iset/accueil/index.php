@@ -1,5 +1,6 @@
 <?php
-session_start();
+    session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +57,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Aide</span>
             </a></li>
 
-            <li class="logout"><a href="" >
+            <li class="logout"><a href=../../logout/logout.php>
                 <i class="fas fa-sign-out-alt"></i>
                 <span class="nav-item">Logout</span>
             </a></li>
@@ -90,7 +91,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 py-4  ">
                         <!--- Departement card card------------------>
                             <div class="card" style="width: 18rem;">
-                                <img src="../../assets/departement2.png" class="card-img-top" alt="...">
+                                <img src="../../assets/images/departement2.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Departement</h5>
                                     <span class="card-text">5 Departement <br>Voir les departements </span>
@@ -101,7 +102,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     <div class="col-md-8  col-lg-6 col-xl-5 col-xxl-4 py-4  ">
                         <!--- Etuduiant card card------------------>
                             <div class="card" style="width: 18rem;">
-                                <img src="../../assets/etudiant2.jpg" class="card-img-top" alt="...">
+                                <img src="../../assets/images/etudiant2.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Etuduiant</h5>
                                     <span class="card-text">200 Etudiants<br>Voir tous les Etudiants</span>
@@ -114,7 +115,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     <div class="col-md-8  col-lg-6 col-xl-5 col-xxl-4 px-3 py-4 ">
                         <!--- Enseignant card------------------>
                         <div class="card" style="width: 18rem;">
-                            <img src="../../assets/prof.jpg" class="card-img-top" height='285px'>
+                            <img src="../../assets/images/prof.jpg" class="card-img-top" height='285px'>
                             <div class="card-body">
                                 <h5 class="card-title">Enseignant</h5>
                                 <span class="card-text">50 Enseignants<br>Voir tous les Enseignants</span>
@@ -125,7 +126,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4  px-3 py-4">
                         <!--- Parametre card card------------------>
                             <div class="card" style="width: 18rem;">
-                                <img src="../../assets/parametre.jpg" class="card-img-top" alt="...">
+                                <img src="../../assets/images/parametre.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Parametres</h5>
                                     <span class="card-text">Parametres<br>Voir parametres</span>
@@ -136,7 +137,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 px-3 py-4">
                         <!--- aide card------------------>
                             <div class="card" style="width: 18rem;">
-                                <img src="../../assets/help.png" class="card-img-top" alt="...">
+                                <img src="../../assets/images/help.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Aide</h5>
                                     <span class="card-text">Aide<br>Voir Aide</span>
