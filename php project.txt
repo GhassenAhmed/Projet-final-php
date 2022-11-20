@@ -3,17 +3,21 @@ sign : add button->log **
 sign + log : changer email par "nom utilisateur" + changement du table base de donne + code php **
 sign : add condition du mot de pass : length + contenu chiffre **
 log : mot de passe (oublié)
-
+sign + table:inscrit : add clef d'inscription + adresse de courriel + confirmation courriel + prenom + nom + ville + pays:select options
 
 
 page principale :
 
 departements :
+nom:
 ti
 gm
 gp
 ge
 aa
+nombres etudiants
+nombres profs
+chef departement
 
 etudiants:
 cin

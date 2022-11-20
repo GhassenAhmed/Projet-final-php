@@ -1,30 +1,26 @@
 <?php
-
-//var_dump($users);
+session_start();
 if(isset($_POST['send'])){
     require_once '../connexion db/db_connect.php';
     extract($_POST);
-    $utilisateur=$_POST['utilisateur'];
-    $password=$_POST['password'];
-    if(empty($utilisateur)&&empty($password)){
+    $_SESSION['utilisateur']=$_POST['utilisateur'];
+    $_SESSION['password']=$_POST['password'];
+    if(empty($_SESSION['ustilisateur'])&&empty($_SESSION['password'])){
         header("location:log.phtml?error=champsvides");
         exit();
-    }else if(empty($utilisateur) || empty($password)){
+    }else if(empty($_SESSION['ustilisateur']) || empty($_SESSION['password'])){
         header("location:log.phtml?error=champsvides");
         exit();
     }else{
         $sql="SELECT * FROM inscrit WHERE utilisateur=? AND password=?";
         $query=$pdo->prepare($sql);
-        $query->execute([$utilisateur,$password]);
+        $query->execute([$_SESSION['ustilisateur'],$_SESSION['password']]);
         $check=$query->fetchAll();
-       
+        
+
         /**/
         if(!empty($check)){
-
-            /*session_start();
-            $_SESSION['id']=$check['id'];
-            $_SESSION['utilisateur']=$check['utilisateur'];*/
-            header("location:../iset/index.php?utilisateur=".$utilisateur);
+            header("location:../iset/accueil/index.php?utilisateur=".$_SESSION['ustilisateur']);
             exit();
             /*$pwdCheck=password_verify($password,$check['password']);*/
            
@@ -56,11 +52,3 @@ if(isset($_POST['send'])){
 }
 
 include 'log.phtml';
-   
-/*$id=$_POST['id'];
-$utilisateur=$_POST['utilisateur'];
-$password=$_POST['password'];
-if($utilisateur=='admin' && $password=='admin')
-header('location:../iset/index.phtml?id=');
-else
-echo'welcome user';*/
