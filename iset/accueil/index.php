@@ -27,7 +27,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Accueill</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="../profile/profile.php">
                 <i class="fas fa-user"></i>
                 <span class="nav-item">Profile</span>
             </a></li>
@@ -78,7 +78,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 px-3 py-4">
                         <!--- Profile card------------------>
                         <div class="card" style="width: 18rem;">
-                            <img src="../../assets/profile2.jpg" class="card-img-top" alt="...">
+                            <img src="../../assets/images/profile2.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Profile</h5>
                                 <span class="card-text"> Bienvenue <strong><?= $_SESSION['utilisateur']?> </strong>! <br>Voir votre profil !</span>

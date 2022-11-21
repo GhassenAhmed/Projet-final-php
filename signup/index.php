@@ -7,12 +7,10 @@
 
         if(empty($utilisateur) && empty($password) && empty($password_confirm)&& empty($numero)&& empty($clef)&& empty($courriel)&& empty($prenom)&& empty($nom)){
            header("location:sign.phtml?error=champsvides");
-           $error[0]="Remplissez vos champs SVP !";
            exit();
         }
         else if(empty($utilisateur) || empty($password) || empty($password_confirm) || empty($numero)|| empty($clef)|| empty($courriel)|| empty($prenom)|| empty($nom)){
             header("location:sign.phtml?error=champsvides");
-            $error[0]="Remplissez vos champs SVP !";
             exit();
          }
         else if(!preg_match("/^[a-zA-Z0-9]*$/",$utilisateur)){
