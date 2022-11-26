@@ -33,12 +33,12 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Accueill</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="../profile/profile.php">
                 <i class="fas fa-user"></i>
                 <span class="nav-item">Profile</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="../departement/departement.php">
                 <i class="fas fa-wallet"></i>
                 <span class="nav-item">Departement</span>
             </a></li>

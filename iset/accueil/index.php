@@ -32,12 +32,12 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Profile</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="../departement/departement.php">
                 <i class="fas fa-wallet"></i>
                 <span class="nav-item">Departement</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="">
                 <i class="fas fa-chart-bar"></i>
                 <span class="nav-item">Etudiant</span>
             </a></li>
@@ -95,7 +95,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                 <div class="card-body">
                                     <h5 class="card-title">Departement</h5>
                                     <span class="card-text">5 Departement <br>Voir les departements </span>
-                                    <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
+                                    <a href="../departement/departement.php" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>
