@@ -10,6 +10,15 @@ a{
     text-decoration: none;
 }
 /********************aside*********************/
+/*.sidebar{
+    width: 345px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #DFE9F5;
+    z-index: 100;
+}*/
 .sidebar{
     width:17rem;
     min-width: 17rem;
@@ -42,14 +51,14 @@ a{
     font-size: 20px;
     text-align: center;
 }
-.sidebar-menu a:first-child{
+.sidebar-menu a:nth-child(3){
     font-size: 1.5rem;
     padding-right: 2rem;
 }
 .nav-item{
     padding-left: 1rem;
 }
-.sidebar-menu li:first-child{
+.sidebar-menu li:nth-child(3){
     background-color: #fff;
     border-radius: 50px 0px 0px 50px;
     padding: 5px 5px 5px 5px;
@@ -94,4 +103,3 @@ a{
         width: calc(100%-17rem);
     }
 }
-
