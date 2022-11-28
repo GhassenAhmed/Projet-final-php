@@ -2,7 +2,7 @@
     
       $error=array();
     if(isset($_POST['send'])){
-        require '../connexion db/db_connect.php';
+        require '../../connexion db/db_connect.php';
         extract($_POST);
 
         if(empty($utilisateur) && empty($password) && empty($password_confirm)&& empty($numero)&& empty($clef)&& empty($courriel)&& empty($prenom)&& empty($nom)){

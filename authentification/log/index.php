@@ -3,7 +3,7 @@ session_start();
 
 
 if(isset($_POST['send'])){
-    require_once '../connexion db/db_connect.php';
+    require_once '../../connexion db/db_connect.php';
     extract($_POST);
     $_SESSION['utilisateur']=$_POST['utilisateur'];
     $_SESSION['password']=$_POST['password'];
@@ -22,7 +22,7 @@ if(isset($_POST['send'])){
 
         /**/
         if(!empty($check)){
-            header("location:../iset/accueil/index.php?utilisateur=".$_POST['utilisateur']);
+            header("location:../../iset/accueil/index.php?utilisateur=".$_POST['utilisateur']);
             exit();
             /*$pwdCheck=password_verify($password,$check['password']);*/
            

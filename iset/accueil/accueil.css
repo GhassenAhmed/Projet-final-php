@@ -10,15 +10,6 @@ a{
     text-decoration: none;
 }
 /********************aside*********************/
-/*.sidebar{
-    width: 345px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: #DFE9F5;
-    z-index: 100;
-}*/
 .sidebar{
     width:17rem;
     min-width: 17rem;
