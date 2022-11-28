@@ -22,14 +22,6 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
         $query=$pdo->prepare($sql);
         $query->execute();
         $departement =$query->fetchAll();
-
-        $sql1="SELECT * FROM etudiant";
-        $query1=$pdo->prepare($sql1);
-        $query->execute();
-        $etud=$query1->fetchAll();
-        var_dump($etud);
-        
-       
     ?>
     <div class="sidebar">
         <div class="sidebar-title">
@@ -87,7 +79,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </div>
     </div> 
            
-        <div class="main p-5 m-5">
+        <div class="main p-5">
             <main>
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !

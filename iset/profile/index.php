@@ -77,11 +77,14 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $_SESSION['utilisateur']?></h3>
             </div>
     </div> 
-        <div class="main p-5 m-5">
+        <div class="main p-5 ">
             <main>
-                <div class="row">
 
-                
+            <div class="alert alert-success "role="alert">
+                 Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
+            </div>
+
+                <div class="row p-5 m-5">
                 <form class="form" action="traitement.php" method="post" novalidate>
                              <!-- --------------------alerte --------------------------->
                             
