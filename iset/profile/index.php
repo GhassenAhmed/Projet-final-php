@@ -11,7 +11,7 @@ session_start();
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="style.css">
     <title>Profile</title>
 </head>
 <body>
@@ -33,12 +33,12 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Accueill</span>
             </a></li>
 
-            <li><a href="../profile/profile.php">
+            <li><a href="../profile/index.php">
                 <i class="fas fa-user"></i>
                 <span class="nav-item">Profile</span>
             </a></li>
 
-            <li><a href="../departement/departement.php">
+            <li><a href="../departement/index.php">
                 <i class="fas fa-wallet"></i>
                 <span class="nav-item">Departement</span>
             </a></li>

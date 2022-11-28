@@ -12,7 +12,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="accueil.css">
+    <link rel="stylesheet" href="style.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -27,24 +27,24 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Accueill</span>
             </a></li>
 
-            <li><a href="../profile/profile.php">
+            <li><a href="../profile/index.php">
                 <i class="fas fa-user"></i>
                 <span class="nav-item">Profile</span>
             </a></li>
 
-            <li><a href="../departement/departement.php">
+            <li><a href="../departement/index.php">
                 <i class="fas fa-wallet"></i>
                 <span class="nav-item">Departement</span>
             </a></li>
 
             <li><a href="">
                 <i class="fas fa-chart-bar"></i>
-                <span class="nav-item">Etudiant</span>
+                <span class="nav-item">Etudiants</span>
             </a></li>
 
             <li><a href="#">
                 <i class="fas fa-tasks"></i>
-                <span class="nav-item">Enseingant</span>
+                <span class="nav-item">Enseingants</span>
             </a></li>
 
             <li><a href="#">
@@ -83,7 +83,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                 <h5 class="card-title">Profile</h5>
                                 <span class="card-text"> Bienvenue <strong><?= $_SESSION['utilisateur']?> </strong>! <br>Voir votre profil !</span>
                                 <form action="index.php" method="get">
-                                <a  href="../profile/profile.php" name="profile" class="btn btn-primary" style='float:right;'>Voir</a>
+                                <a  href="../profile/index.php" name="profile" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </form>
                             </div>
                         </div>
@@ -95,7 +95,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                 <div class="card-body">
                                     <h5 class="card-title">Departement</h5>
                                     <span class="card-text">5 Departement <br>Voir les departements </span>
-                                    <a href="../departement/departement.php" class="btn btn-primary" style='float:right;'>Voir</a>
+                                    <a href="../departement/index.php" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>
