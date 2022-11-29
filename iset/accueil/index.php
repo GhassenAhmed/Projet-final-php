@@ -57,7 +57,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Aide</span>
             </a></li>
 
-            <li class="logout"><a href=../../logout/logout.php>
+            <li class="logout"><a href=../../logout/index.php>
                 <i class="fas fa-sign-out-alt"></i>
                 <span class="nav-item">Logout</span>
             </a></li>

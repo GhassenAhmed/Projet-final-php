@@ -26,11 +26,11 @@ if(isset($_POST['update'])){
     $query=$pdo->prepare($sql);
     $query->execute([$user]);
     $_SESSION['utilisateur']=$utilisateur;
-    header("location:profile.php?succes");
+    header("location:index.php?succes");
     exit();
 }
 else{
-    header("location:profile.php?echec");
+    header("location:index.php?echec");
     exit();
 }
 ?>

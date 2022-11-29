@@ -10,6 +10,6 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     
 </head>
 <body>
-    
+<script src="https://kit.fontawesome.com/c5bebe1cfa.js" crossorigin="anonymous"></script>   
 </body>
 </html>

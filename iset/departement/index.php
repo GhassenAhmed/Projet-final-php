@@ -17,8 +17,8 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 </head>
 <body>
     <?php
-        include_once "../../connexion db/db_connect.php";
-        $sql="SELECT * FROM departement";
+        include "../../connexion db/db_connect.php";
+        $sql="SELECT d.*,count(e.id_dep) FROM departement d,etudiant e where d.id=e.id_dep group by e.id_dep";
         $query=$pdo->prepare($sql);
         $query->execute();
         $departement =$query->fetchAll();
@@ -84,21 +84,23 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
-            <table class="table table-striped table-primary">
+            <table class="table table-striped table-primary ">
                 <thead>
                     <tr>
-                        <th scope="col">Departements</th>
-                        <th scope="col">Nom Departement</th>
-                        <th scope="col">Nombre salles</th>
+                        <th scope="col" class="py-3">Departements</th>
+                        <th scope="col" class="py-3">Nom Departement</th>
+                        <th scope="col" class="py-3">Nombre Salles</th>
+                        <th scope="col" class="py-3">Nombre Etudiants</th>
                         
                     </tr>
                 </thead>
                 <tbody>
                 <?php foreach($departement as $dep):?>
                     <tr>
-                        <td><?= $dep['id']?></td>
-                        <td><?= $dep['nom']?></td>
-                        <td><?= $dep['nbresalles']?></td>
+                        <td class="py-3"><?= $dep['id']?></td>
+                        <td class="py-3"><?= $dep['nom']?></td>
+                        <td class="py-3"><?= $dep['nbresalles']?></td>
+                        <td class="py-3"><?= $dep['count(e.id_dep)']?></td>
                     </tr>
                 <?php endforeach;?>
                 </tbody>
