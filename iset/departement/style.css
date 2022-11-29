@@ -48,7 +48,7 @@ a{
 .sidebar-menu a{
     color:#002B5B;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 26px;
+    font-size: 26px !important;
     text-align: center;
 }
 .sidebar-menu a:nth-child(3){
