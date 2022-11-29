@@ -94,5 +94,10 @@ a{
         margin-left: 17rem;
         width: calc(100%-17rem);
     }
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 

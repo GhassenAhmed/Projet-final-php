@@ -76,14 +76,14 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
-                <div class="row">
+                <div class="row ">
 
-                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 px-3 py-4">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 px-3 py-4 container-fluid">
                         <!--- Profile card------------------>
                         <div class="card" style="width: 18rem;">
                             <img src="../../assets/images/profile2.jpg" height="262px" class="card-img-top">
                             <div class="card-body">
-                                <h5 class="card-title">Profile</h5>
+                                <h5 class="card-title  ">Profile</h5>
                                 <span class="card-text"> Bienvenue <strong><?= $_SESSION['utilisateur']?> </strong>! <br>Voir votre profil !</span>
                                 <form action="index.php" method="get">
                                 <a  href="../profile/index.php" name="profile" class="btn btn-primary" style='float:right;'>Voir</a>
@@ -91,23 +91,23 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 py-4  ">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 py-4  container-fluid">
                         <!--- Departement card card------------------>
                             <div class="card" style="width: 18rem;">
                                 <img src="../../assets/images/departement2.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Departement</h5>
+                                    <h5 class="card-title ">Departement</h5>
                                     <span class="card-text">5 Departement <br>Voir les departements </span>
                                     <a href="../departement/index.php" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>
-                    <div class="col-md-8  col-lg-6 col-xl-5 col-xxl-4 py-4  ">
+                    <div class="col-md-8  col-lg-6 col-xl-5 col-xxl-4 py-4  container-fluid">
                         <!--- Etuduiant card card------------------>
                             <div class="card" style="width: 18rem;">
                                 <img src="../../assets/images/etudiant2.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Etuduiant</h5>
+                                    <h5 class="card-title ">Etuduiant</h5>
                                     <span class="card-text">200 Etudiants<br>Voir tous les Etudiants</span>
                                     <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
@@ -115,34 +115,34 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     </div>
                 
 
-                    <div class="col-md-8  col-lg-6 col-xl-5 col-xxl-4 px-3 py-4 ">
+                    <div class="col-md-8  col-lg-6 col-xl-5 col-xxl-4 px-3 py-4 container-fluid">
                         <!--- Enseignant card------------------>
                         <div class="card" style="width: 18rem;">
                             <img src="../../assets/images/prof.jpg" class="card-img-top" height='285px'>
                             <div class="card-body">
-                                <h5 class="card-title">Enseignant</h5>
+                                <h5 class="card-title ">Enseignant</h5>
                                 <span class="card-text">50 Enseignants<br>Voir tous les Enseignants</span>
                                 <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4  px-3 py-4">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4  px-3 py-4 container-fluid">
                         <!--- Parametre card card------------------>
                             <div class="card" style="width: 18rem;">
                                 <img src="../../assets/images/parametre.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Parametres</h5>
+                                    <h5 class="card-title ">Parametres</h5>
                                     <span class="card-text">Parametres<br>Voir parametres</span>
                                     <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>
-                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 px-3 py-4">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 px-3 py-4 container-fluid">
                         <!--- aide card------------------>
                             <div class="card" style="width: 18rem;">
                                 <img src="../../assets/images/help.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Aide</h5>
+                                    <h5 class="card-title ">Aide</h5>
                                     <span class="card-text">Aide<br>Voir Aide</span>
                                     <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>

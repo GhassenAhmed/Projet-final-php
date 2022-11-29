@@ -103,26 +103,6 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <?php endforeach;?>
                 </tbody>
             </table>
-
-            <table class="table table-striped table-primary">
-                <thead>
-                    <tr>
-                        <th scope="col">Departements</th>
-                        <th scope="col">Nom Departement</th>
-                        <th scope="col">Nombre salles</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($departement as $dep):?>
-                    <tr>
-                        <td><?= $dep['id']?></td>
-                        <td><?= $dep['nom']?></td>
-                        <td><?= $dep['nbresalles']?></td>
-                    </tr>
-                <?php endforeach;?>
-                </tbody>
-            </table>
             </main>
         </div>
     </div>

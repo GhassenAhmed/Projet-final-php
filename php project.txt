@@ -24,7 +24,7 @@ tel
 
 enseignant:
 cin
-nom prenom 
+nom prenom  
 matiere 1
 matiere 2
 tel

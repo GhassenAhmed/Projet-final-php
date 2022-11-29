@@ -48,7 +48,7 @@ a{
 .sidebar-menu a{
     color:#002B5B;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
+    font-size: 26px;
     text-align: center;
 }
 .sidebar-menu a:nth-child(3){
@@ -76,7 +76,7 @@ a{
     padding-right: 10px;
 }
 .main{
-    width: calc(100%-17rem); 
+    width: calc(100%-17rem);
 }
 .main-content.active{
     width: 100%;
