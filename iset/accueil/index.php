@@ -77,9 +77,9 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
-                <div class="row ">
+                <div class="row">
 
-                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4 px-3 py-4 container-fluid">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4  px-3 py-4">
                         <!--- Profile card------------------>
                         <div class="card" style="width: 18rem;">
                             <img src="../../assets/images/profile2.jpg" height="262px" class="card-img-top">

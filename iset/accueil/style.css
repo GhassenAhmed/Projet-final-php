@@ -47,8 +47,8 @@ a{
 }
 .sidebar-menu li:hover{
     background-color: #fff;
-    border-radius: 50px 0px 0px 50px;
-    
+    font-size: 26px !important;
+    border-radius: 50px 0px 0px 50px;   
 }
 
 /******************main*******************/
@@ -94,6 +94,9 @@ a{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .card{
+        justify-items: auto;
     }
 }
 
