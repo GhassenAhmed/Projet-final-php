@@ -23,6 +23,12 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
         $query=$pdo->prepare($sql);
         $query->execute();
         $departement =$query->fetchAll();
+
+        $sql="SELECT d.*,count(e.id_dep) FROM departement d,enseignant e where d.id=e.id_dep group by e.id_dep";
+        $query=$pdo->prepare($sql);
+        $query->execute();
+        $departement1 =$query->fetchAll();
+
     ?>
     <div class="sidebar">
         <div class="sidebar-title">
@@ -118,7 +124,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach($departement as $dep):?>
+                <?php foreach($departement1 as $dep):?>
                     <tr>
                         <td class="py-3"><?= $dep['id']?></td>
                         <td class="py-3"><?= $dep['nom']?></td>
