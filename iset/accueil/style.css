@@ -39,25 +39,16 @@ a{
 .sidebar-menu a{
     color:#002B5B;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
+    font-size: 26px !important;
     text-align: center;
-}
-.sidebar-menu a:first-child{
-    font-size: 1.5rem;
-    padding-right: 2rem;
 }
 .nav-item{
     padding-left: 1rem;
 }
-/*.sidebar-menu li:first-child{
-    background-color: #fff;
-    border-radius: 50px 0px 0px 50px;
-    padding: 5px 5px 5px 5px;
-}*/
 .sidebar-menu li:hover{
     background-color: #fff;
     border-radius: 50px 0px 0px 50px;
-    padding: 5px 5px 5px 5px;
+    
 }
 
 /******************main*******************/
