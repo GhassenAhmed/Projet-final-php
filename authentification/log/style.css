@@ -6,7 +6,8 @@
     letter-spacing: 1px;
     font-weight: bold;
     color: #fff;
-    padding-top: 20px;    
+    padding-top: 20px; 
+      
     
 }
 .nav-bar{
@@ -39,8 +40,7 @@
     display: block;
     border-radius: 15px;
     padding: 20px;
-    margin-left: 25%;
-    
+    margin-left: 25%;  
 }
 /*h3{
     color: black;
