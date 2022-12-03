@@ -6,8 +6,11 @@ if(isset($_POST['send'])){
     if(empty($_POST['utilisateur'])&&empty($_POST['password'])){
         header("location:log.phtml?error=champsvides");
         exit();
-    }else if(empty($_POST['utilisateur']) || empty($_POST['password'])){
-        header("location:log.phtml?error=champsvides");
+    }else if(empty($_POST['utilisateur'])){
+        header("location:log.phtml?utilisateur=champvide");
+        exit();
+    }else if(empty($_POST['password'])){
+        header("location:log.phtml?password=champvide");
         exit();
     }else{
         $sql="SELECT * FROM inscrit WHERE utilisateur=?";
