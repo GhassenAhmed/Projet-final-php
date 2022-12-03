@@ -38,10 +38,10 @@
             header("location:sign.phtml?error=sqlerror");
             exit();
         }else {
-        
+        $passHash=password_hash($_POST['password'],PASSWORD_DEFAULT);
         $sql="INSERT INTO inscrit (utilisateur,numero,password,password_confirm,clef,courriel,prenom,nom,ville,pays) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $query=$pdo->prepare($sql);
-        $query->execute([$utilisateur,$numero,$password,$password_confirm,$clef,$courriel,$prenom,$nom,$ville,$pays]);
+        $query->execute([$utilisateur,$numero,$passHash,$passHash,$clef,$courriel,$prenom,$nom,$ville,$pays]);
         header("location:../log/log.phtml?signup=succes");
         exit();
           }
