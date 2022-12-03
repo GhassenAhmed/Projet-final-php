@@ -43,9 +43,9 @@ a{
     text-align: center;
 }
 .nav-item{
-    padding-left: 1rem;
+    padding-left:1rem;
 }
-.sidebar-menu li:hover{
+.sidebar-menu a:hover{
     background-color: #fff;
     font-size: 26px !important;
     border-radius: 50px 0px 0px 50px;   

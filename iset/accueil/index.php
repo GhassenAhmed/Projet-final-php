@@ -23,7 +23,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
         </div>
         <div class="sidebar-menu">
         <ul>
-            <li><a href="#">
+            <li><a href="index.php">
                 <i class="fas fa-home"></i>
                 <span class="nav-item">Accueill</span>
             </a></li>
