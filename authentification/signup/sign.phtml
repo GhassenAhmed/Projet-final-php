@@ -26,7 +26,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     </div>
 
     <div class="row">
-        <form class="form" action="index.php" method="post" novalidate>
+        <form class="form" action="index.php" method="post" novalidate enctype="multipart/form-data">
                              <!-- --------------------title --------------------------->
            
              <div class="mb-3 container-fluid">
@@ -91,6 +91,12 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="mb-3">
                 <label  class="form-label">Pays</label>
                 <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="pays">
+                <div class="form-text">Caracteres seulement !</div>
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label">Image</label>
+                <input type="file" class="form-control"  title="SVP ajouter votre image !" name="file">
                 <div class="form-text">Caracteres seulement !</div>
             </div>
 
