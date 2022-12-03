@@ -35,12 +35,12 @@
 .form{
     
     width: 50%;
-    border: 3px solid rgb(30, 86, 191) ;
+    
     margin-top: 70px;
     display: block;
     border-radius: 15px;
     padding: 20px;
-    margin-left: 25%;  
+    margin-left: 25%; 
 }
 /*h3{
     color: black;
