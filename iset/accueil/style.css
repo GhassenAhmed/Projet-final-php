@@ -45,7 +45,7 @@ a{
 .nav-item{
     padding-left:1rem;
 }
-.sidebar-menu a:hover{
+.sidebar-menu li:hover{
     background-color: #fff;
     font-size: 26px !important;
     border-radius: 50px 0px 0px 50px;   
