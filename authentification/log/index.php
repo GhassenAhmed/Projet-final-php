@@ -1,9 +1,10 @@
 <?php
 session_start();
+require_once '../../connexion db/db_connect.php';
 if(isset($_POST['send'])){
          $utilisateur=$_POST['utilisateur'];
         $password=$_POST['password'];
-        var_dump($_POST['password']);
+        var_dump($password);
     if(empty($utilisateur)&&empty($password)){
         header("location:log.phtml?error=champsvides");
         exit();
@@ -11,24 +12,25 @@ if(isset($_POST['send'])){
         header("location:log.phtml?utilisateur=champvide");
         exit();
     }else{
-        require_once '../../connexion db/db_connect.php';
-        $sql="SELECT password FROM inscrit WHERE utilisateur=?";
-        $query=$pdo->prepare($sql);
-        $passHash=$query->execute([$_POST['utilisateur']]);
-        if(password_verify($_POST['password'],$passHash)){
-            header("location:log.phtml?password=Password_incorrect");
-            exit();
-        }
-        else if(password_verify($password,$passHash)){
+        $sql=$pdo->prepare("SELECT * FROM inscrit WHERE utilisateur=?");
+        $sql->execute([$utilisateur]);
+        $res=$sql->fetch();
+        var_dump($res);
+        if($res){
+            if(password_verify($password,$res['password'])){
             $_SESSION['utilisateur']=$utilisateur;
             $_SESSION['password']=$password;
             header("location:../../iset/accueil/index.php?utilisateur=".$_SESSION['utilisateur']);
              exit();
          }
          else{
-            header("location:log.phtml?error=error");
+            header("location:log.phtml?error=password_incorrect");
             exit();
          }
+        }else{
+            header("location:log.phtml?error=utilisateur_invalid");
+            exit();
+        }
 }
 }
 
