@@ -9,7 +9,7 @@ if(isset($_POST['send'])){
         header("location:log.phtml?error=champsvides");
         exit();
     }else if(empty($utilisateur)){
-        header("location:log.phtml?utilisateur=champvide");
+        header("location:log.phtml?error=utilisateur_champvide");
         exit();
     }else{
         $sql=$pdo->prepare("SELECT * FROM inscrit WHERE utilisateur=?");

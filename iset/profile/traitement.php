@@ -20,17 +20,29 @@ if(isset($_POST['update'])){
     
     $ville=$_POST['ville'];
     $pays=$_POST['pays'];
+    
+    $passHash=password_hash($_POST['password'],PASSWORD_DEFAULT);
 
-    $sql ="UPDATE inscrit SET  utilisateur='$utilisateur',numero='$numero',password='$password',password_confirm='$password_confirm',clef='$clef',courriel='$courriel',prenom='$prenom',nom='$nom',ville='$ville',pays='$pays'
-     WHERE utilisateur=?";
-    $query=$pdo->prepare($sql);
-    $query->execute([$user]);
-    $_SESSION['utilisateur']=$utilisateur;
-    header("location:index.php?succes");
-    exit();
-}
-else{
-    header("location:index.php?echec");
-    exit();
-}
+        $sql=$pdo->prepare("SELECT * FROM inscrit WHERE utilisateur=?");
+        $sql->execute([$utilisateur]);
+        $res=$sql->fetch();
+
+    if(!$res){
+        $sql ="UPDATE inscrit SET  utilisateur='$utilisateur',numero='$numero',password='$password',password_confirm='$password_confirm',clef='$clef',courriel='$courriel',prenom='$prenom',nom='$nom',ville='$ville',pays='$pays'
+        WHERE utilisateur=?";
+       $query=$pdo->prepare($sql);
+       $query->execute([$user]);
+       $_SESSION['utilisateur']=$utilisateur;
+       header("location:index.php?update=succes");
+       exit();
+    }else{
+        header("location:index.php?error=echec");
+        exit();
+    }
+   
+    }
+    else{
+        header("location:index.php?error=echec");
+        exit();
+    }
 ?>

@@ -91,15 +91,24 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                             
                                 
                                         <?php
-                                        if(isset($_GET['succes'])){
-                                            echo'<div class="alert alert-success" role="alert">
-                                                    Modification avec succes !
-                                                </div>';
-                                        }elseif(isset($_GET['echec'])){
-                                            echo'<div class="alert alert-success" role="alert">
-                                            Modification avec echecs !
-                                                </div>';
-                                        }?> 
+                                        if(isset($_POST['update'])){
+                                            if($_GET['succes']){
+                                                echo'<div class="alert alert-success" role="alert">
+                                                        Modification avec succes !
+                                                    </div>';
+                                            }else if($_GET['echec']){
+                                                echo'<div class="alert alert-danger" role="alert">
+                                                nom utilisateur existe !
+                                                    </div>';
+                                            }else{
+                                                echo'';
+                                            }
+                                        }else{
+                                            echo'';
+                                        }
+                                            ?> 
+                                        
+                                        
                                         
                             <!-- --------------------Utilisateur --------------------------->
             <div class="mb-3">

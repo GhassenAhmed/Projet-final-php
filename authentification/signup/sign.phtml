@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="sign.css">
@@ -25,87 +26,149 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </div>
     </div>
 
-    <div class="row">
-        <form class="form" action="index.php" method="post" novalidate enctype="multipart/form-data">
-                             <!-- --------------------title --------------------------->
-           
-             <div class="mb-3 container-fluid">
-                
-                <button type="button" class="btn btn-info" style="float:right;margin-bottom:20px;" id="btn_inscrit" ><a href="../log"  style="text-decoration:none;color:black;" >Login</a></button>
-            </div>
-                            <!-- --------------------Utilisateur --------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Utilisateur</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="utilisateur" required>
-                <div id="emailHelp" class="form-text">Caracteres et numeros seulement !</div>
-            </div>
-             <!-- --------------------numeroTel--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Numero Telephone</label>
-                <input type="tel" class="form-control"  pattern="[0-9]{8}" title="SVP le nom doit avoir caracteres et nombres seulement" name="numero" max="8" min="8" required>
-                <div  class="form-text">numeros seulement !</div>
-            </div>
-                            <!-- --------------------password --------------------------->
-            <div class="mb-3">
-                <label  class="form-label"  required>Mot de passe</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-                            <!-- --------------------confirm password --------------------------->
-                    <div id="confirm" >
-                        <label  class="form-label"  required>confirm mot de passe</label>
-                        <input type="password" class="form-control" name="password_confirm" >
-                     
+    
+        <form class="form" action="index.php" method="post" novalidate enctype="multipart/form-data" style='background-color: aliceblue;'>
+                   <!-- --------------------title --------------------------->
+
+
+                   <!-- --------------------row1 --------------------------->
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 container-fluid">
+                        <button type="button" class="btn btn-info" style="float:right;margin-bottom:20px;" id="btn_inscrit" ><a href="../log"  style="text-decoration:none;color:black;" >Login</a></button>
                     </div>
+                </div>
             </div>
-                            <!-- --------------------Clef d'inscription--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Clef d'inscription</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="clef" required>
-                <div class="form-text">Caracteres et numeros seulement !</div>
-            </div>
-                <!-- -------------------- Adresse de courriel--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Adresse de courriel</label>
-                <input type="text" class="form-control" title="SVP le nom doit avoir caracteres et nombres seulement" name="courriel" required>
-                <div class="form-text">Caracteres et numeros seulement !</div>
-            </div>
-                 <!-- -------------------- Prénom--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Prénom</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="prenom" required>
-                <div class="form-text">Caracteres seulement !</div>
-            </div>
-                <!-- -------------------- Nom--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Nom</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="nom" required>
-                <div class="form-text">Caracteres seulement !</div>
-            </div>
+            
+                    <!-- --------------------row2 --------------------------->
+                    <div class="row">
 
-                 <!-- -------------------- ville--------------------------->
-             <div class="mb-3">
-                <label  class="form-label">Ville</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="ville">
-                <div class="form-text">Caracteres seulement !</div>
-            </div>
-                 <!-- -------------------- Pays--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Pays</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="pays">
-                <div class="form-text">Caracteres seulement !</div>
-            </div>
+                        <div class="col">
+                                            <!-- -------------------- Nom--------------------------->
+                                <div class="mb-3">
+                                    <label  class="form-label">Nom</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="nom" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                        </div>
 
-            <div class="mb-3">
-                <label  class="form-label">Image</label>
-                <input type="file" class="form-control"  title="SVP ajouter votre image !" name="file">
-                <div class="form-text">Caracteres seulement !</div>
-            </div>
+                        <div class="col">
+                                    <!-- -------------------- Prénom--------------------------->
+                            <div class="mb-3">
+                                <label  class="form-label">Prénom</label>
+                                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="prenom" required>
+                                <div class="form-text">Caracteres seulement !</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- --------------------row3 --------------------------->
+                    <div class="row">
+
+                        <div class="col">
+                                         <!-- --------------------numeroTel--------------------------->
+                                    <div class="mb-3">
+                                        <label  class="form-label">Numero Telephone</label>
+                                        <input type="tel" class="form-control"  pattern="[0-9]{8}" title="SVP le nom doit avoir caracteres et nombres seulement" name="numero" max="8" min="8" required>
+                                        <div  class="form-text">numeros seulement !</div>
+                                    </div>
+                        </div>
+
+                        <div class="col">
+                                              <!-- --------------------Clef d'inscription--------------------------->
+                                    <div class="mb-3">
+                                        <label  class="form-label">Clef d'inscription</label>
+                                        <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="clef" required>
+                                        <div class="form-text">Caracteres et numeros seulement !</div>
+                                    </div>
+                        </div>
+                    </div>
+
+
+                    <!-- --------------------row4 --------------------------->
+                    <div class="row">
+
+                        <div class="col">
+                                        <!-- -------------------- ville--------------------------->
+                                    <div class="mb-3">
+                                        <label  class="form-label">Ville</label>
+                                        <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="ville">
+                                        <div class="form-text">Caracteres seulement !</div>
+                                    </div>
+                        </div>
+
+                        <div class="col">
+                                             <!-- -------------------- Pays--------------------------->
+                                <div class="mb-3">
+                                    <label  class="form-label">Pays</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="pays">
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                        </div>
+                    </div>
+
+                    <!-- --------------------row5 --------------------------->
+                    <div class="row">
+
+                        <div class="col">
+                                        <!-- --------------------Utilisateur --------------------------->
+                                    <div class="mb-3">
+                                        <label  class="form-label">Utilisateur</label>
+                                        <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="utilisateur" required>
+                                        <div id="emailHelp" class="form-text">Caracteres et numeros seulement !</div>
+                                    </div>
+                        </div>
+
+                        <div class="col">
+                                   <!-- -------------------- Adresse de courriel--------------------------->
+                                <div class="mb-3">
+                                    <label  class="form-label">Adresse de courriel</label>
+                                    <input type="text" class="form-control" title="SVP le nom doit avoir caracteres et nombres seulement" name="courriel" required>
+                                    <div class="form-text">Caracteres et numeros seulement !</div>
+                                </div>
+                        </div>
+                    </div>
+                     <!-- --------------------row5 --------------------------->
+                     <div class="row">
+
+                                <div class="col">
+                                                <!-- --------------------password --------------------------->
+                                            <div class="mb-3">
+                                                <label  class="form-label"  required>Mot de passe</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                                            </div>
+                                </div>
+
+                                <div class="col">
+                                        <!-- -------------------- confirm password--------------------------->
+                                        <div id="confirm" >
+                                            <label  class="form-label"  required>confirm mot de passe</label>
+                                            <input type="password" class="form-control" name="password_confirm" >
+                     
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- --------------------row5 --------------------------->
+                     <div class="row">
+
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Image</label>
+                                    <input type="file" class="form-control"  title="SVP ajouter votre image !" name="file">
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div> 
+                            </div>
+                    </div>
+
+           
 
                             <!----------------------check--------------------------->
             
                             <!-- --------------------button --------------------------->
             <button type="submit" name="send" class="btn btn-primary">Inscrit</button>
         </form>
-    </div>
+    
     
     
     <script src="https://kit.fontawesome.com/c5bebe1cfa.js" crossorigin="anonymous"></script>
