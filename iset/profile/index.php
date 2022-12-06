@@ -25,7 +25,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
          $sql1="SELECT * FROM inscrit WHERE utilisateur=?";
          $query1=$pdo->prepare($sql1);
          $query1->execute([$_SESSION['utilisateur']]);
-         $profile=$query1->fetchAll();
+         $profile=$query1->fetch();
     ?>
     <div class="sidebar">
         <div class="sidebar-title">
@@ -98,7 +98,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                     <!-- -------------------- Nom--------------------------->
                         <div class="mb-3">
                             <label  class="form-label">Nom</label>
-                            <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="nom" required value="<?=$profile[0]['nom'];?>">
+                            <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="nom" required value="<?=$profile['nom'];?>">
                             <div class="form-text">Caracteres seulement !</div>
                         </div>
                 </div>
@@ -107,7 +107,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                             <!-- -------------------- Prénom--------------------------->
                     <div class="mb-3">
                         <label  class="form-label">Prénom</label>
-                        <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="prenom" value="<?=$profile[0]['prenom']?>"required> <div class="form-text">Caracteres seulement !</div>
+                        <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="prenom" value="<?=$profile['prenom']?>"required> <div class="form-text">Caracteres seulement !</div>
                     </div>
                 </div>
                 </div>
@@ -120,7 +120,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                 <!-- --------------------numeroTel--------------------------->
                             <div class="mb-3">
                                 <label  class="form-label">Numero Telephone</label>
-                                <input type="tel" class="form-control"  pattern="[0-9]{8}" title="SVP le nom doit avoir caracteres et nombres seulement" name="numero" max="8" min="8" required value="<?=$profile[0]['numero']?>">
+                                <input type="tel" class="form-control"  pattern="[0-9]{8}" title="SVP le nom doit avoir caracteres et nombres seulement" name="numero" max="8" min="8" required value="<?=$profile['numero']?>">
                                 <div  class="form-text">numeros seulement !</div>
                             </div>
                 </div>
@@ -129,7 +129,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                     <!-- --------------------Clef d'inscription--------------------------->
                             <div class="mb-3">
                                 <label  class="form-label">Clef d'inscription</label>
-                                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="clef" value="<?=$profile[0]['clef']?>"required>
+                                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="clef" value="<?=$profile['clef']?>"required>
                                 <div class="form-text">Caracteres et numeros seulement !</div>
                             </div>
                 </div>
@@ -143,7 +143,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                 <!-- -------------------- ville--------------------------->
                             <div class="mb-3">
                                 <label  class="form-label">Ville</label>
-                                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" value="<?=$profile[0]['ville']?>"name="ville">
+                                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" value="<?=$profile['ville']?>"name="ville">
                                 <div class="form-text">Caracteres seulement !</div>
                             </div>
                 </div>
@@ -152,7 +152,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                     <!-- -------------------- Pays--------------------------->
                         <div class="mb-3">
                             <label  class="form-label">Pays</label>
-                            <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" value="<?=$profile[0]['pays']?>"name="pays">
+                            <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" value="<?=$profile['pays']?>"name="pays">
                             <div class="form-text">Caracteres seulement !</div>
                         </div>
                 </div>
@@ -165,7 +165,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                 <!-- --------------------Utilisateur --------------------------->
                             <div class="mb-3">
                                 <label  class="form-label">Utilisateur</label>
-                                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="utilisateur" required value="<?=$profile[0]['utilisateur'];?>">
+                                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="utilisateur" required value="<?=$profile['utilisateur'];?>">
                                 <div id="emailHelp" class="form-text">Caracteres et numeros seulement !</div>
                             </div>
                 </div>
@@ -174,7 +174,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                         <!-- -------------------- Adresse de courriel--------------------------->
                         <div class="mb-3">
                             <label  class="form-label">Adresse de courriel</label>
-                            <input type="text" class="form-control" title="SVP le nom doit avoir caracteres et nombres seulement" name="courriel" value="<?=$profile[0]['courriel']?>"required>
+                            <input type="text" class="form-control" title="SVP le nom doit avoir caracteres et nombres seulement" name="courriel" value="<?=$profile['courriel']?>"required>
                             <div class="form-text">Caracteres et numeros seulement !</div>
                         </div>
                 </div>

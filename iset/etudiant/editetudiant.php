@@ -25,10 +25,10 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 <body>
     <?php
         include "../../connexion db/db_connect.php";
-        $sql="SELECT * FROM etudiant";
-        $query=$pdo->prepare($sql);
-        $query->execute();
-        $etudiants =$query->fetchAll();
+        $id=$_GET['id'];
+        $sql=$pdo->prepare("SELECT * FROM etudiant where id=?");
+        $sql->execute([$id]);
+        $etudiants =$sql->fetch ();
         
 
     ?>
@@ -90,36 +90,69 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
            
         <div class="main p-5">
             <main>
+            <div style='font-size :50px;'><a href="./index.php"><i class="bi bi-arrow-return-left"></i></a></div>
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
             
-            <table class="table table-striped  ">
-                <thead>
-                    <tr>
-                        <th scope="col" class="py-3">CIN</th>
-                        <th scope="col" class="py-3">Nom</th>
-                        <th scope="col" class="py-3">Prenom</th>
-                        <th scope="col" class="py-3">Classe</th>
-                        <th scope="col" class="py-3">Modifier</th>
-                        <th scope="col" class="py-3">Suprimer</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($etudiants as $etudiant):?>
-                    <tr>
-
-                        <td class="py-3"><?= $etudiant['cin']?></td>
-                        <td class="py-3"><?= $etudiant['nom']?></td>
-                        <td class="py-3"><?= $etudiant['prenom']?></td>
-                        <td class="py-3"><?= $etudiant['classe']?></td>
-                        <td class="py-3"><a class="btn btn-info" href="./editetudiant.php?id=<?=$etudiant["id"]?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td class="py-3"><a class="btn btn-danger" href="../../functions/delete.php?id=<?=$etudiant["id"]?> "><i class="fa-solid fa-trash"></i></i></a></td>
-                    </tr>
-                <?php endforeach;?>
-                </tbody>
-            </table>
+            <form>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Cin</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="cin" value="<?=$etudiants['cin'] ?>">
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Classe</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="classe" required value="<?=$etudiants['classe'] ?>">
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Nom</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="nom" required value="<?=$etudiants['nom'] ?>">
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Prenom</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="prenom" required value="<?=$etudiants['prenom'] ?>">
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Telephone</label>
+                                    <input type="text" class="form-control"    name="tel" required value="<?=$etudiants['tel'] ?>">
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Adresse</label>
+                                    <input type="text" class="form-control"   name="adresse" required value="<?=$etudiants['adresse'] ?>">
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex">
+                                <button type="submit" name="update" class="btn btn-primary">Modifier</button>
+                            </div>
+                        </div>
+                    </form>
                 
             
         </div>
