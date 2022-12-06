@@ -20,18 +20,9 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Etuduiant</title>
+    <title>Ajoute Etuduiant</title>
 </head>
 <body>
-    <?php
-        include "../../connexion db/db_connect.php";
-        $sql="SELECT * FROM etudiant";
-        $query=$pdo->prepare($sql);
-        $query->execute();
-        $etudiants =$query->fetchAll();
-        
-
-    ?>
     <div class="sidebar">
         <div class="sidebar-title">
             <h3>Gestion Institut</h3>
@@ -90,38 +81,77 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
            
         <div class="main p-5">
             <main>
+            
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
-            <span style='float:right;font-size:50px'><a href="./ajouteretudiant.php"><i class="bi bi-person-plus"></i></a></span>
+            <div class="retour">
                 
-                
-            <table class="table table-striped  ">
-                <thead>
-                    <tr>
-                        <th scope="col" class="py-3">CIN</th>
-                        <th scope="col" class="py-3">Nom</th>
-                        <th scope="col" class="py-3">Prenom</th>
-                        <th scope="col" class="py-3">Classe</th>
-                        <th scope="col" class="py-3">Modifier</th>
-                        <th scope="col" class="py-3">Suprimer</th>
+            </div>
+            <form action="traitement.php" method="post" >
+                        <div class="row">
+                            <div class="col">
+                            <span style='float:right;font-size:50px' ><a href="./ajouteretudiant.php"><i class="bi bi-arrow-return-left"></i></a></span>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Cin</label>
+                                    <input type="text" class="form-control"   name="cin">
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Classe</label>
+                                    <input type="text" class="form-control"   name="classe" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                               
                         
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($etudiants as $etudiant):?>
-                    <tr>
-
-                        <td class="py-3"><?= $etudiant['cin']?></td>
-                        <td class="py-3"><?= $etudiant['nom']?></td>
-                        <td class="py-3"><?= $etudiant['prenom']?></td>
-                        <td class="py-3"><?= $etudiant['classe']?></td>
-                        <td class="py-3"><a class="btn btn-info" href="./editetudiant.php?id=<?=$etudiant["id"]?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td class="py-3"><a class="btn btn-danger" href="../../functions/delete.php?id=<?=$etudiant["id"]?> "><i class="fa-solid fa-trash"></i></i></a></td>
-                    </tr>
-                <?php endforeach;?>
-                </tbody>
-            </table>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Nom</label>
+                                    <input type="text" class="form-control"   name="nom" requi>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Prenom</label>
+                                    <input type="text" class="form-control"   name="prenom" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Telephone</label>
+                                    <input type="text" class="form-control"    name="tel" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Adresse</label>
+                                    <input type="text" class="form-control"   name="adresse" required >
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex">
+                                <button type="submit" name="ajouter" class="btn btn-primary">ajouter</button>
+                            </div>
+                        </div>
+            </form>
+                
                 
             
         </div>

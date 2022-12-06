@@ -28,7 +28,22 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
         $id=$_GET['id'];
         $sql=$pdo->prepare("SELECT * FROM etudiant where id=?");
         $sql->execute([$id]);
-        $etudiants =$sql->fetch ();
+        $etudiants =$sql->fetch();
+        if(isset($_POST['update'])){
+    
+            $cin=$_POST['cin'];
+            $classe=$_POST['classe'];
+            
+            $nom=$_POST['nom'];
+            $prenom=$_POST['prenom'];
+            
+            $tel=$_POST['tel'];
+            $adresse=$_POST['adresse'];
+        
+            $sql = $pdo->prepare("UPDATE etudiant SET  cin='$cin',classe='$classe',nom='$nom',prenom='$prenom',tel='$tel',adresse='$adresse' 
+            WHERE id=?");
+           $sql->execute([$id]);
+           header("location:index.php?update=succes");}
         
 
     ?>
@@ -95,19 +110,19 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
             
-            <form>
+            <form action="" method="post">
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3">
                                     <label  class="form-label">Cin</label>
-                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="cin" value="<?=$etudiants['cin'] ?>">
+                                    <input type="text" class="form-control"   name="cin" value="<?=$etudiants['cin'] ?>">
                                     <div class="form-text">Caracteres seulement !</div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-3">
                                     <label  class="form-label">Classe</label>
-                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="classe" required value="<?=$etudiants['classe'] ?>">
+                                    <input type="text" class="form-control"   name="classe" required value="<?=$etudiants['classe'] ?>">
                                     <div class="form-text">Caracteres seulement !</div>
                                 </div>
                             </div>
@@ -117,14 +132,14 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                             <div class="col">
                                 <div class="mb-3">
                                     <label  class="form-label">Nom</label>
-                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="nom" required value="<?=$etudiants['nom'] ?>">
+                                    <input type="text" class="form-control"   name="nom" required value="<?=$etudiants['nom'] ?>">
                                     <div class="form-text">Caracteres seulement !</div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-3">
                                     <label  class="form-label">Prenom</label>
-                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="prenom" required value="<?=$etudiants['prenom'] ?>">
+                                    <input type="text" class="form-control"   name="prenom" required value="<?=$etudiants['prenom'] ?>">
                                     <div class="form-text">Caracteres seulement !</div>
                                 </div>
                             </div>
