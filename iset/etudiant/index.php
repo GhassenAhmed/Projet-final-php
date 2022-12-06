@@ -99,7 +99,59 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Cin</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="cin" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Classe</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="classe" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Nom</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="nom" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Prenom</label>
+                                    <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="prenom" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Telephone</label>
+                                    <input type="text" class="form-control"    name="tel" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Adresse</label>
+                                    <input type="text" class="form-control"   name="adresse" required>
+                                    <div class="form-text">Caracteres seulement !</div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -131,7 +183,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                         <td class="py-3"><?= $etudiant['nom']?></td>
                         <td class="py-3"><?= $etudiant['prenom']?></td>
                         <td class="py-3"><?= $etudiant['classe']?></td>
-                        <td class="py-3"><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                        <td class="py-3"><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><a href="../../functions/edit.php?id=<?=$etudiant["id"]?>"><i class="fa-solid fa-pen-to-square"></i></a></button></td>
                         <td class="py-3"><a class="btn btn-danger" href="../../functions/delete.php?id=<?=$etudiant["id"]?> "><i class="fa-solid fa-trash"></i></i></a></td>
                     </tr>
                 <?php endforeach;?>
