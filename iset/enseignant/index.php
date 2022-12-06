@@ -18,22 +18,10 @@
 integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-    <title>Departement</title>
+    <title>Etuduiant</title>
 </head>
 <body>
-    <?php
-        include "../../connexion db/db_connect.php";
-        $sql="SELECT d.*,count(e.id_dep) FROM departement d,etudiant e where d.id=e.id_dep group by e.id_dep";
-        $query=$pdo->prepare($sql);
-        $query->execute();
-        $departement =$query->fetchAll();
 
-        $sql="SELECT d.*,count(e.id_dep) FROM departement d,enseignant e where d.id=e.id_dep group by e.id_dep";
-        $query=$pdo->prepare($sql);
-        $query->execute();
-        $departement1 =$query->fetchAll();
-
-    ?>
     <div class="sidebar">
         <div class="sidebar-title">
             <h3>Gestion Institut</h3>
@@ -95,49 +83,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
-            <table class="table table-striped table-primary ">
-                <thead>
-                    <tr>
-                        <th scope="col" class="py-3">Departements</th>
-                        <th scope="col" class="py-3">Nom Departement</th>
-                        <th scope="col" class="py-3">Nombre Salles</th>
-                        <th scope="col" class="py-3">Nombre Etudiants</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($departement as $dep):?>
-                    <tr>
-                        <td class="py-3"><?= $dep['id']?></td>
-                        <td class="py-3"><?= $dep['nom']?></td>
-                        <td class="py-3"><?= $dep['nbresalles']?></td>
-                        <td class="py-3"><?= $dep['count(e.id_dep)']?></td>
-                    </tr>
-                <?php endforeach;?>
-                </tbody>
-            </table>
-
-            <table class="table table-striped table-primary ">
-                <thead>
-                    <tr>
-                        <th scope="col" class="py-3">Departements</th>
-                        <th scope="col" class="py-3">Nom Departement</th>
-                        <th scope="col" class="py-3">Nombre Salles</th>
-                        <th scope="col" class="py-3">Nombre Etudiants</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($departement1 as $dep):?>
-                    <tr>
-                        <td class="py-3"><?= $dep['id']?></td>
-                        <td class="py-3"><?= $dep['nom']?></td>
-                        <td class="py-3"><?= $dep['nbresalles']?></td>
-                        <td class="py-3"><?= $dep['count(e.id_dep)']?></td>
-                    </tr>
-                <?php endforeach;?>
-                </tbody>
-            </table>
+           
             </main>
         </div>
     </div>

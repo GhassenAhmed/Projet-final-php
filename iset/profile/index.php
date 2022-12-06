@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(empty($_SESSION['utilisateur'])){
+    header('location:../../authentification/log/log.phtml');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,12 +48,12 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Departement</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="../etudiant/index.php">
                 <i class="fas fa-chart-bar"></i>
                 <span class="nav-item">Etudiant</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="../enseignant/index.php">
                 <i class="fas fa-tasks"></i>
                 <span class="nav-item">Enseingant</span>
             </a></li>
@@ -87,95 +91,116 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 
                 <div class="row p-5 m-5">
                 <form class="form" action="traitement.php" method="post" novalidate>
-                             <!-- --------------------alerte --------------------------->
-                            
-                                
-                                        <?php
-                                        if(isset($_POST['update'])){
-                                            if($_GET['succes']){
-                                                echo'<div class="alert alert-success" role="alert">
-                                                        Modification avec succes !
-                                                    </div>';
-                                            }else if($_GET['echec']){
-                                                echo'<div class="alert alert-danger" role="alert">
-                                                nom utilisateur existe !
-                                                    </div>';
-                                            }else{
-                                                echo'';
-                                            }
-                                        }else{
-                                            echo'';
-                                        }
-                                            ?> 
-                                        
-                                        
-                                        
-                            <!-- --------------------Utilisateur --------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Utilisateur</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="utilisateur" required value="<?=$profile[0]['utilisateur'];?>">
-                <div id="emailHelp" class="form-text">Caracteres et numeros seulement !</div>
-            </div>
+                
+                            <div class="row">
 
-             <!-- --------------------numeroTel------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Numero Telephone</label>
-                <input type="tel" class="form-control"  pattern="[0-9]{8}" title="SVP le nom doit avoir caracteres et nombres seulement" name="numero" max="8" min="8" required value="<?=$profile[0]['numero']?>">
-                <div  class="form-text">numeros seulement !</div>
-            </div>
-                           <!---------------------password --------------------------->
-            <div class="mb-3">
-                <label  class="form-label"  required>Mot de passe</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" value="<?=$profile[0]['password']?>" name="password">
-                            <!--------------------confirm password --------------------------->
-                    <div id="confirm" >
-                        <label  class="form-label"  required>confirm mot de passe</label>
-                        <input type="password" class="form-control" value="<?=$profile[0]['password_confirm']?>"name="password_confirm" >
-                     
+                <div class="col">
+                                    <!-- -------------------- Nom--------------------------->
+                        <div class="mb-3">
+                            <label  class="form-label">Nom</label>
+                            <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="nom" required value="<?=$profile[0]['nom'];?>">
+                            <div class="form-text">Caracteres seulement !</div>
+                        </div>
+                </div>
+
+                <div class="col">
+                            <!-- -------------------- Prénom--------------------------->
+                    <div class="mb-3">
+                        <label  class="form-label">Prénom</label>
+                        <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="prenom" value="<?=$profile[0]['prenom']?>"required> <div class="form-text">Caracteres seulement !</div>
                     </div>
-            </div>
-                            <!--------------------Clef d'inscription--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Clef d'inscription</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="clef" value="<?=$profile[0]['clef']?>"required>
-                <div class="form-text">Caracteres et numeros seulement !</div>
-            </div>
-                <!------------------- Adresse de courriel--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Adresse de courriel</label>
-                <input type="text" class="form-control" title="SVP le nom doit avoir caracteres et nombres seulement" name="courriel" value="<?=$profile[0]['courriel']?>"required>
-                <div class="form-text">Caracteres et numeros seulement !</div>
-            </div>
-                  <!-------------------- Prénom--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Prénom</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="prenom" value="<?=$profile[0]['prenom']?>"required>
-                <div class="form-text">Caracteres seulement !</div>
-            </div>
-                <!-------------------- Nom--------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Nom</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="nom" value="<?=$profile[0]['nom']?>"required>
-                <div class="form-text">Caracteres seulement !</div>
-            </div>
+                </div>
+                </div>
 
-                 <!-------------------- ville-------------------------->
-             <div class="mb-3">
-                <label  class="form-label">Ville</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" value="<?=$profile[0]['ville']?>"name="ville">
-                <div class="form-text">Caracteres seulement !</div>
-            </div>
-                 <!-------------------- Pays-------------------------->
-            <div class="mb-3">
-                <label  class="form-label">Pays</label>
-                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" value="<?=$profile[0]['pays']?>"name="pays">
-                <div class="form-text">Caracteres seulement !</div>
-            </div>
 
-                            <!----------------------check--------------------------->
-            
+                <!-- --------------------row3 --------------------------->
+                <div class="row">
+
+                <div class="col">
+                                <!-- --------------------numeroTel--------------------------->
+                            <div class="mb-3">
+                                <label  class="form-label">Numero Telephone</label>
+                                <input type="tel" class="form-control"  pattern="[0-9]{8}" title="SVP le nom doit avoir caracteres et nombres seulement" name="numero" max="8" min="8" required value="<?=$profile[0]['numero']?>">
+                                <div  class="form-text">numeros seulement !</div>
+                            </div>
+                </div>
+
+                <div class="col">
+                                    <!-- --------------------Clef d'inscription--------------------------->
+                            <div class="mb-3">
+                                <label  class="form-label">Clef d'inscription</label>
+                                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="clef" value="<?=$profile[0]['clef']?>"required>
+                                <div class="form-text">Caracteres et numeros seulement !</div>
+                            </div>
+                </div>
+                </div>
+
+
+                <!-- --------------------row4 --------------------------->
+                <div class="row">
+
+                <div class="col">
+                                <!-- -------------------- ville--------------------------->
+                            <div class="mb-3">
+                                <label  class="form-label">Ville</label>
+                                <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" value="<?=$profile[0]['ville']?>"name="ville">
+                                <div class="form-text">Caracteres seulement !</div>
+                            </div>
+                </div>
+
+                <div class="col">
+                                    <!-- -------------------- Pays--------------------------->
+                        <div class="mb-3">
+                            <label  class="form-label">Pays</label>
+                            <input type="text" class="form-control"  pattern="[a-zA-Z]+" title="SVP le nom doit avoir caracteres et nombres seulement" value="<?=$profile[0]['pays']?>"name="pays">
+                            <div class="form-text">Caracteres seulement !</div>
+                        </div>
+                </div>
+                </div>
+
+                <!-- --------------------row5 --------------------------->
+                <div class="row">
+
+                <div class="col">
+                                <!-- --------------------Utilisateur --------------------------->
+                            <div class="mb-3">
+                                <label  class="form-label">Utilisateur</label>
+                                <input type="text" class="form-control"  pattern="[a-zA-Z0-9]+" title="SVP le nom doit avoir caracteres et nombres seulement" name="utilisateur" required value="<?=$profile[0]['utilisateur'];?>">
+                                <div id="emailHelp" class="form-text">Caracteres et numeros seulement !</div>
+                            </div>
+                </div>
+
+                <div class="col">
+                        <!-- -------------------- Adresse de courriel--------------------------->
+                        <div class="mb-3">
+                            <label  class="form-label">Adresse de courriel</label>
+                            <input type="text" class="form-control" title="SVP le nom doit avoir caracteres et nombres seulement" name="courriel" value="<?=$profile[0]['courriel']?>"required>
+                            <div class="form-text">Caracteres et numeros seulement !</div>
+                        </div>
+                </div>
+                </div>
+                <!-- --------------------row5 --------------------------->
+                <div class="row">
+
+                        <div class="col">
+                                        <!-- --------------------password --------------------------->
+                                    <div class="mb-3">
+                                        <label  class="form-label"  required>votre nouveau Mot de passe</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1"  name="password" placeholder="....">
+                                    </div>
+                        </div>
+
+                        
+                </div>
+                            
                             <!-- --------------------button --------------------------->
-            <button type="submit" name="update" class="btn btn-primary">Modifier</button>
+
+                <div class="row">
+                    <div class="col d-flex">
+                    <button type="submit" name="update" class="btn btn-primary">Modifier</button>
+                    
+                    </div>
+                </div>
         </form>
                     
                 </div>

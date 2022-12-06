@@ -1,6 +1,9 @@
 <?php
     session_start();
-
+    if(empty($_SESSION['utilisateur'])){
+        header('location:../../authentification/log/log.phtml');
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,12 +41,12 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Departement</span>
             </a></li>
 
-            <li><a href="">
+            <li><a href="../etudiant/index.php">
                 <i class="fas fa-chart-bar"></i>
                 <span class="nav-item">Etudiants</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="../enseignant/index.php">
                 <i class="fas fa-tasks"></i>
                 <span class="nav-item">Enseingants</span>
             </a></li>
@@ -110,7 +113,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                 <div class="card-body">
                                     <h5 class="card-title ">Etuduiant</h5>
                                     <span class="card-text">200 Etudiants<br>Voir tous les Etudiants</span>
-                                    <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
+                                    <a href="../etudiant/index.php" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>
@@ -123,7 +126,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                             <div class="card-body">
                                 <h5 class="card-title ">Enseignant</h5>
                                 <span class="card-text">50 Enseignants<br>Voir tous les Enseignants</span>
-                                <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
+                                <a href="../enseignant/index.php" class="btn btn-primary" style='float:right;'>Voir</a>
                             </div>
                         </div>
                     </div>

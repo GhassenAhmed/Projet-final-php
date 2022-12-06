@@ -17,21 +17,19 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Departement</title>
+    <title>Etuduiant</title>
 </head>
 <body>
     <?php
         include "../../connexion db/db_connect.php";
-        $sql="SELECT d.*,count(e.id_dep) FROM departement d,etudiant e where d.id=e.id_dep group by e.id_dep";
+        $sql="SELECT * FROM etudiant";
         $query=$pdo->prepare($sql);
         $query->execute();
-        $departement =$query->fetchAll();
-
-        $sql="SELECT d.*,count(e.id_dep) FROM departement d,enseignant e where d.id=e.id_dep group by e.id_dep";
-        $query=$pdo->prepare($sql);
-        $query->execute();
-        $departement1 =$query->fetchAll();
+        $etudiants =$query->fetchAll();
+        
 
     ?>
     <div class="sidebar">
@@ -55,7 +53,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Departement</span>
             </a></li>
 
-            <li><a href="../etudiant/index.php">
+            <li><a href="">
                 <i class="fas fa-chart-bar"></i>
                 <span class="nav-item">Etudiant</span>
             </a></li>
@@ -92,56 +90,61 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
            
         <div class="main p-5">
             <main>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" >Modifier Etudiant</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+            </div>
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
-            <table class="table table-striped table-primary ">
+            
+            <table class="table table-striped  ">
                 <thead>
                     <tr>
-                        <th scope="col" class="py-3">Departements</th>
-                        <th scope="col" class="py-3">Nom Departement</th>
-                        <th scope="col" class="py-3">Nombre Salles</th>
-                        <th scope="col" class="py-3">Nombre Etudiants</th>
+                        <th scope="col" class="py-3">CIN</th>
+                        <th scope="col" class="py-3">Nom</th>
+                        <th scope="col" class="py-3">Prenom</th>
+                        <th scope="col" class="py-3">Classe</th>
+                        <th scope="col" class="py-3">Modifier</th>
+                        <th scope="col" class="py-3">Suprimer</th>
                         
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach($departement as $dep):?>
+                <?php foreach($etudiants as $etudiant):?>
                     <tr>
-                        <td class="py-3"><?= $dep['id']?></td>
-                        <td class="py-3"><?= $dep['nom']?></td>
-                        <td class="py-3"><?= $dep['nbresalles']?></td>
-                        <td class="py-3"><?= $dep['count(e.id_dep)']?></td>
+                        <td class="py-3"><?= $etudiant['cin']?></td>
+                        <td class="py-3"><?= $etudiant['nom']?></td>
+                        <td class="py-3"><?= $etudiant['prenom']?></td>
+                        <td class="py-3"><?= $etudiant['classe']?></td>
+                        <td class="py-3"><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                        <td class="py-3"><a class="btn btn-danger" href="../../functions/delete.php?id=<?=$etudiant["id"]?> "><i class="fa-solid fa-trash"></i></i></a></td>
                     </tr>
                 <?php endforeach;?>
                 </tbody>
             </table>
-
-            <table class="table table-striped table-primary ">
-                <thead>
-                    <tr>
-                        <th scope="col" class="py-3">Departements</th>
-                        <th scope="col" class="py-3">Nom Departement</th>
-                        <th scope="col" class="py-3">Nombre Salles</th>
-                        <th scope="col" class="py-3">Nombre Etudiants</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($departement1 as $dep):?>
-                    <tr>
-                        <td class="py-3"><?= $dep['id']?></td>
-                        <td class="py-3"><?= $dep['nom']?></td>
-                        <td class="py-3"><?= $dep['nbresalles']?></td>
-                        <td class="py-3"><?= $dep['count(e.id_dep)']?></td>
-                    </tr>
-                <?php endforeach;?>
-                </tbody>
-            </table>
-            </main>
+                
+            
         </div>
+        </main>
+        
     </div>
-
+                    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/c5bebe1cfa.js" crossorigin="anonymous"></script>
     <script>
         let btn=document.querySelector("#btn1");
