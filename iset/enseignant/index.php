@@ -21,7 +21,15 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     <title>Etuduiant</title>
 </head>
 <body>
+    <?php
+            include "../../connexion db/db_connect.php";
+            $sql="SELECT * FROM enseignant";
+            $query=$pdo->prepare($sql);
+            $query->execute();
+            $enseignant =$query->fetchAll();
+            
 
+        ?>
     <div class="sidebar">
         <div class="sidebar-title">
             <h3>Gestion Institut</h3>
@@ -83,7 +91,33 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
-           
+        
+            <table class="table table-striped  ">
+                <thead>
+                    <tr>
+                        <th scope="col" class="py-3">CIN</th>
+                        <th scope="col" class="py-3">Nom</th>
+                        <th scope="col" class="py-3">Prenom</th>
+                        <th scope="col" class="py-3">Classe</th>
+                        <th scope="col" class="py-3">Modifier</th>
+                        <th scope="col" class="py-3">Suprimer</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach($etudiants as $etudiant):?>
+                    <tr>
+
+                        <td class="py-3"><?= $enseignant['cin']?></td>
+                        <td class="py-3"><?= $enseignant['nom']?></td>
+                        <td class="py-3"><?= $enseignant['prenom']?></td>
+                        <td class="py-3"><?= $enseignant['classe']?></td>
+                        <td class="py-3"><a class="btn btn-info" href="./editenseignant.php?id=<?=$enseignant["id"]?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td class="py-3"><a class="btn btn-danger" href="./delete.php?id=<?=$enseignant["id"]?> "><i class="fa-solid fa-trash"></i></i></a></td>
+                    </tr>
+                <?php endforeach;?>
+                </tbody>
+            </table>
             </main>
         </div>
     </div>
