@@ -56,7 +56,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Parametres</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="../aide/index.php">
                  <i class="fas fa-question-circle"></i>
                 <span class="nav-item">Aide</span>
             </a></li>
@@ -148,7 +148,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                 <div class="card-body">
                                     <h5 class="card-title ">Aide</h5>
                                     <span class="card-text">Aide<br>Voir Aide</span>
-                                    <a href="#" class="btn btn-primary" style='float:right;'>Voir</a>
+                                    <a href="../aide/index.php" class="btn btn-primary" style='float:right;'>Voir</a>
                                 </div>
                             </div>
                     </div>

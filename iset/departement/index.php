@@ -70,7 +70,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <span class="nav-item">Parametres</span>
             </a></li>
 
-            <li><a href="#">
+            <li><a href="../aide/index.php">
                  <i class="fas fa-question-circle"></i>
                 <span class="nav-item">Aide</span>
             </a></li>
