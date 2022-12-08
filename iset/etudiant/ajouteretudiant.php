@@ -75,7 +75,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="p-3 header_admin " style='background:#fff;'> 
                 <button class="btn btn-outline-info mx-1"  id="btn1"><i class="fa-solid fa-list"></i></button>
                 <div class="float-end">
-            <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $_SESSION['utilisateur']?> <span class="arrow"><i class="fa-solid fa-arrow-down"></i></span></h3>
+            <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $_SESSION['utilisateur']?> <span class="arrow"><a href="./index.php"><i class="fa-solid fa-arrow-down"></i></a></span></h3>
             </div>
     </div> 
            
@@ -91,7 +91,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <form action="traitement.php" method="post" >
                         <div class="row">
                             <div class="col">
-                            <span style='float:right;font-size:50px' ><a href="./ajouteretudiant.php"><i class="bi bi-arrow-return-left"></i></a></span>    
+                            <span style='float:right;font-size:50px' ><a href="./index.php"><i class="bi bi-arrow-return-left"></i></a></span>    
                             </div>
                         </div>
                         <div class="row">
