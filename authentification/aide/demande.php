@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>log</title>
+    <title>Aide</title>
 </head>
 <body>
     <div class="row row-cols-md-1">
@@ -28,36 +28,39 @@
     <div class="row d-flex">
         <div class="col">
         
-        <form class="form" method="post" action="index.php" style='background-color: aliceblue;'>
+        <form class="form" method="post" action="traitement.php" style='background-color: aliceblue;'>
                              <!-- --------------------title --------------------------->
 
-            <div class="mb-3 container-fluid">
-                
-                <button type="button" class="btn btn-info" style="float:right;margin-bottom:20px;" id="btn_inscrit" ><a href="../signup">S'inscrire</a></button>
-            </div>
                             <!-- --------------------utilisateur --------------------------->
             <div class="mb-3">
-                <label  class="form-label">Utilisateur</label>
-                <input type="text" class="form-control" name="utilisateur" >
+                <label  class="form-label">Nom</label>
+                <input type="text" class="form-control" name="nom" placeholder="....">
                 <div  class="form-text">Nous ne partagerons jamais votre nom utilisateur avec quelqu'un d'autre .</div>
                 
             </div>
                             <!-- --------------------password --------------------------->
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label" >Mot de passe</label>
-                <input type="password" class="form-control" name="password">
-                
-
-                <div id="emailHelp" class="form-text">Mot de passe oublié ? <a href="" style="text-decoration:none;">Cliquez ici</a></div>
+                <label for="exampleInputPassword1" class="form-label" >Email</label>
+                <input type="email" class="form-control" name="email" required placeholder="....">
+                <div  class="form-text">Nous ne partagerons jamais votre nom utilisateur avec quelqu'un d'autre .</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" >Cin</label>
+                <input type="text" class="form-control" name="cin" required placeholder="...."> 
+                <div  class="form-text">Nous ne partagerons jamais votre nom utilisateur avec quelqu'un d'autre .</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"  >Sujet</label>
+                <textarea  class="form-control" name="sujet" required placeholder="...."></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" >Message</label>
+                <textarea  class="form-control" name="message" required placeholder="...."></textarea>
             </div>
                             <!-- --------------------check--------------------------->
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Enregistrer</label>
-            </div>
-            <div id="emailHelp" class="form-text float-end">Soumettre une demande ? <a href="../aide/demande.php" style="text-decoration:none;">Cliquez ici</a></div>
+           
                             <!-- --------------------button --------------------------->
-            <button type="submit" class="btn btn-primary" name="send">Login</button>
+            <button type="submit" class="btn btn-primary" name="send">Envoyer</button>
         </form>
         
         </div>
