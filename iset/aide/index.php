@@ -20,6 +20,14 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     <title>Aide</title>
 </head>
 <body>
+    <?php
+        include "../../connexion db/db_connect.php";
+        $sql="SELECT * FROM demande ";
+        $query=$pdo->prepare($sql);
+        $query->execute();
+        $demandes =$query->fetchAll();
+
+    ?>
     <div class="sidebar">
         <div class="sidebar-title">
             <h3>Gestion Institut</h3>
@@ -80,7 +88,30 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
-               
+            <table class="table table-striped table-primary ">
+                <thead>
+                    <tr>
+                        <th scope="col" class="py-3">Cin</th>
+                        <th scope="col" class="py-3">Nom</th>
+                        <th scope="col" class="py-3">Email</th>
+                        <th scope="col" class="py-3">Sujet</th>
+                        <th scope="col" class="py-3">Message</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach($demandes as $demande):?>
+                    <tr>
+                        <td class="py-3"><?= $demande['cin']?></td>
+                        <td class="py-3"><?= $demande['nom']?></td>
+                        <td class="py-3"><?= $demande['email']?></td>
+                        <td class="py-3"><?= $demande['sujet']?></td>
+                        <td class="py-3"><?= $demande['message']?></td>
+                    </tr>
+                <?php endforeach;?>
+                </tbody>
+            </table>
+
             </main>
         </div>
     </div>
