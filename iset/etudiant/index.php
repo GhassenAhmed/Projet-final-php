@@ -117,7 +117,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                         <td class="py-3"><?= $etudiant['prenom']?></td>
                         <td class="py-3"><?= $etudiant['classe']?></td>
                         <td class="py-3"><a class="btn btn-info" href="editetudiant.php?id=<?=$etudiant["id"]?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td class="py-3"><a class="btn btn-danger" href="delete.php?id=<?=$etudiant["id"]?> "><i class="fa-solid fa-trash"></i></i></a></td>
+                        <td class="py-3"><a class="btn btn-danger" href="delete.php?id=<?=$etudiant["id"]?>"><i class="fa-solid fa-trash"></i></i></a></td>
                     </tr>
                 <?php endforeach;?>
                 </tbody>
