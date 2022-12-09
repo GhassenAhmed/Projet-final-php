@@ -1,32 +1,35 @@
 <?php
     
+   
+    use PHPMailer\PHPMailer\PHPMailer;
+    include "../../send.php";
       $error=array();
     if(isset($_POST['send'])){
         require '../../connexion db/db_connect.php';
         extract($_POST);
 
-        if(empty($utilisateur) && empty($password) && empty($password_confirm)&& empty($numero)&& empty($clef)&& empty($courriel)&& empty($prenom)&& empty($nom)){
-           header("location:sign.phtml?error=champsvides");
+        if(empty($utilisateur) && empty($password) && empty($password_confirm)&& empty($numero)&& empty($clef)&& empty($courriel)&& empty($prenom)&& empty($nom)&& empty($email)){
+           header("location:index.php?error=champsvides");
            exit();
         }
-        else if(empty($utilisateur) || empty($password) || empty($password_confirm) || empty($numero)|| empty($clef)|| empty($courriel)|| empty($prenom)|| empty($nom)){
-            header("location:sign.phtml?error=champsvides");
+        else if(empty($utilisateur) || empty($password) || empty($password_confirm) || empty($numero)|| empty($clef)|| empty($courriel)|| empty($prenom)|| empty($nom)||empty($email)){
+            header("location:index.php?error=champsvides");
             exit();
          }
         else if(!preg_match("/^[a-zA-Z0-9]*$/",$utilisateur)){
-            header("location:sign.phtml?error=invalid_utilisateur");
+            header("location:index.php?error=invalid_utilisateur");
             exit();
         }
         else if(!preg_match("/^[0-9]*$/",$numero)){
-            header("location:sign.phtml?error=invalid_numeroTel");
+            header("location:index.php?error=invalid_numeroTel");
             exit();
         }
         else if(!preg_match("/^[a-zA-Z0-9]*$/",$utilisateur)&&!preg_match("/^[0-9]{2}-[0-9]{3}-[0-9]{3}*$/",$numero)&&empty($password)&&empty($password_confirm)){
-            header("location:sign.phtml?error=invalid_utilisateur");
+            header("location:index.php?error=invalid_utilisateur");
             exit();
         }
         else if($password!==$password_confirm){
-            header("location:sign.phtml?error=mdp_invalid&utilisateur=".$utilisateur);
+            header("location:index.php?error=mdp_invalid&utilisateur=".$utilisateur);
             exit();
         }
         else{
@@ -35,19 +38,21 @@
         $query1->execute([$utilisateur]);
         $check_utilisateur=$query1->fetchAll();
         if(!empty($check_utilisateur)){
-            header("location:sign.phtml?error=sqlerror");
+            header("location:index.php?error=sqlerror");
             exit();
         }else {
         $passHash=password_hash($_POST['password'],PASSWORD_DEFAULT);
-        $sql="INSERT INTO inscrit (utilisateur,numero,password,password_confirm,clef,courriel,prenom,nom,ville,pays) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $sql="INSERT INTO inscrit (utilisateur,email,numero,password,password_confirm,clef,courriel,prenom,nom,ville,pays) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $query=$pdo->prepare($sql);
-        $query->execute([$utilisateur,$numero,$passHash,$passHash,$clef,$courriel,$prenom,$nom,$ville,$pays]);
-        header("location:../log/log.phtml?signup=succes");
+        $query->execute([$utilisateur,$email,$numero,$passHash,$passHash,$clef,$courriel,$prenom,$nom,$ville,$pays]);
+        $email="talelmejri8@gmail.com";
+        sendmail("management",$email,"Welcome","welcometoourschoolmanagement");
+
+        header("location:../log/?signup=succes");
         exit();
           }
-         }
         }
-    
+    }
     
     include "sign.phtml";
 

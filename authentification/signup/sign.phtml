@@ -29,7 +29,11 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
     
         <form class="form" action="index.php" method="post" novalidate enctype="multipart/form-data" style='background-color: aliceblue;'>
                    <!-- --------------------title --------------------------->
-
+                   <?php if(array_key_exists('error',$_GET)): ?>
+                            <div class="alert alert-danger">
+                                 <?=$_GET['error']?>
+                            </div>
+                        <?php endif; ?>
 
                    <!-- --------------------row1 --------------------------->
                     <div class="row">
@@ -119,15 +123,16 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                         <div id="emailHelp" class="form-text">Caracteres et numeros seulement !</div>
                                     </div>
                         </div>
-
                         <div class="col">
-                                   <!-- -------------------- Adresse de courriel--------------------------->
-                                <div class="mb-3">
-                                    <label  class="form-label">Adresse de courriel</label>
-                                    <input type="text" class="form-control" title="SVP le nom doit avoir caracteres et nombres seulement" name="courriel" required>
-                                    <div class="form-text">Caracteres et numeros seulement !</div>
-                                </div>
+                                        <!-- --------------------Email --------------------------->
+                                    <div class="mb-3">
+                                        <label  class="form-label">Email</label>
+                                        <input type="email" class="form-control"    name="email" required>
+                                        <div id="emailHelp" class="form-text">...@gmail.com !</div>
+                                    </div>
                         </div>
+
+                        
                     </div>
                      <!-- --------------------row5 --------------------------->
                      <div class="row">
@@ -151,6 +156,15 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                         </div>
                         <!-- --------------------row5 --------------------------->
                      <div class="row">
+
+                     <div class="col">
+                                   <!-- -------------------- Adresse de courriel--------------------------->
+                                <div class="mb-3">
+                                    <label  class="form-label">Adresse de courriel</label>
+                                    <input type="text" class="form-control" title="SVP le nom doit avoir caracteres et nombres seulement" name="courriel" required>
+                                    <div class="form-text">Caracteres et numeros seulement !</div>
+                                </div>
+                        </div>
 
                             <div class="col">
                                 <div class="mb-3">
