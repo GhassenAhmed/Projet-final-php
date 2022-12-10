@@ -3,12 +3,7 @@
 session_start();
 include '../../connexion db/db_connect.php';
 
-if(isset($_POST['update'])){
-   if($_SESSION['autorisation']=='0'){
-   header("location:index.php?error=autorisation_requis!");
-     exit();
-   }
-    else{
+if(isset($_POST['update']) && $_SESSION['autorisation']=='2'){
         $cin=$_POST['cin'];
         $tel=$_POST['tel'];
         
@@ -25,8 +20,12 @@ if(isset($_POST['update'])){
        $sql->execute([$id]);
        header("location:index.php?update=succes");
        exit();
+        
+   }else{
+       header("location:index.php?error=autorisation_requis!");
+        exit();
     }
-}
+
 if(isset($_POST['ajouter'])){
         if($_SESSION['autorisation']=='0'){
                 header("location:index.php?error=autorisation_requis!");

@@ -28,24 +28,9 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
         $id=$_GET['id'];
         $sql=$pdo->prepare("SELECT * FROM enseignant where id=?");
         $sql->execute([$id]);
-        $etudiants =$sql->fetch();
-        if(isset($_POST['update'])){
-    
-            $cin=$_POST['cin'];
-            $tel=$_POST['tel'];
-            
-            $nom=$_POST['nom'];
-            $prenom=$_POST['prenom'];
-
-            $matiere1=$_POST['matiere1'];
-            $matiere2=$_POST['matiere2'];
-            
-            $adresse=$_POST['adresse'];
-        
-            $sql = $pdo->prepare("UPDATE enseignant SET  cin='$cin',nom='$nom',prenom='$matiere1',matiere2='$matiere2',tel='$matiere1',adresse ='$adresse'
-            WHERE id=?");
-            $sql->execute([$id]);
-           header("location:index.php?update=succes");}
+        $enseignants =$sql->fetch();
+      
+                
         
 
     ?>
@@ -101,7 +86,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="p-3 header_admin " style='background:#fff;'> 
                 <button class="btn btn-outline-info mx-1"  id="btn1"><i class="fa-solid fa-list"></i></button>
                 <div class="float-end">
-            <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $_SESSION['utilisateur']?> <span class="arrow"><i class="fa-solid fa-arrow-down"></i></span></h3>
+            <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $_SESSION['utilisateur']?> </span></h3>
             </div>
     </div> 
            
@@ -116,21 +101,21 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 
                 <div class="row">
                     <div class="col">
-                    <span style='float:right;font-size:50px' ><a href="index.php"><i class="bi bi-arrow-return-left"></i></a></span>    
+                    </a></span>    
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
                             <label  class="form-label">Cin</label>
-                            <input type="text" class="form-control"   name="cin" value="<?=$etudiants['cin']?>">
+                            <input type="text" class="form-control"   name="cin" value="<?=$enseignants['cin']?>">
                             <div class="form-text">Caracteres seulement !</div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label  class="form-label">Telephone</label>
-                            <input type="text" class="form-control"    name="tel" required value="<?=$etudiants['tel']?>">
+                            <input type="text" class="form-control"    name="tel" required value="<?=$enseignants['tel']?>">
                             <div class="form-text">Caracteres seulement !</div>
                         </div>
                     </div>
@@ -140,14 +125,14 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     <div class="col">
                         <div class="mb-3">
                             <label  class="form-label">Nom</label>
-                            <input type="text" class="form-control"   name="nom" required value="<?=$etudiants['nom']?>">
+                            <input type="text" class="form-control"   name="nom" required value="<?=$enseignants['nom']?>">
                             <div class="form-text">Caracteres seulement !</div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label  class="form-label">Prenom</label>
-                            <input type="text" class="form-control"   name="prenom" required value="<?=$etudiants['prenom']?>">
+                            <input type="text" class="form-control"   name="prenom" required value="<?=$enseignants['prenom']?>">
                             <div class="form-text">Caracteres seulement !</div>
                         </div>
                     </div>
@@ -158,14 +143,14 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                     <div class="col">
                         <div class="mb-3">
                             <label  class="form-label">Matiere 1</label>
-                            <input type="text" class="form-control"    name="matiere1" required value="<?=$etudiants['matiere1']?>">
+                            <input type="text" class="form-control"    name="matiere1" required value="<?=$enseignants['matiere1']?>">
                             <div class="form-text">Caracteres seulement !</div>
                         </div>
                     </div>
                     <div class="col">
                     <div class="mb-3">
                             <label  class="form-label">Matiere 2</label>
-                            <input type="text" class="form-control"    name="matiere2" required value="<?=$etudiants['matiere2']?>">
+                            <input type="text" class="form-control"    name="matiere2" required value="<?=$enseignants['matiere2']?>">
                             <div class="form-text">Caracteres seulement !</div>
                     </div>
                     </div>
@@ -175,7 +160,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <div class="col">
                         <div class="mb-3">
                             <label  class="form-label">Adresse</label>
-                            <input type="text" class="form-control"   name="adresse" required value="<?=$etudiants['adresse']?>">
+                            <input type="text" class="form-control"   name="adresse" required value="<?=$enseignants['adresse']?>">
                             <div class="form-text">Caracteres seulement !</div>
                         </div>
                     </div>

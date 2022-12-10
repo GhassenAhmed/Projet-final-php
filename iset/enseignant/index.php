@@ -83,11 +83,6 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <button class="btn btn-outline-info mx-1"  id="btn1"><i class="fa-solid fa-list"></i></button>
                 <div class="float-end">
             <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $_SESSION['utilisateur']?> <span class="arrow"><i class="fa-solid fa-arrow-down"></i></span></h3>
-            <?php if(array_key_exists('error',$_GET)): ?>
-                            <div class="alert alert-danger">
-                                 <?=$_GET['error']?>
-                            </div>
-                        <?php endif; ?>
             </div>
     </div> 
            
@@ -96,6 +91,11 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="alert alert-success "role="alert">
                  Bienvenue <strong><?= $_SESSION['utilisateur']?></strong> sur votre dashboard !
             </div>
+            <?php if(array_key_exists('error',$_GET)): ?>
+                            <div class="alert alert-danger">
+                                 <?=$_GET['error']?>
+                            </div>
+                        <?php endif; ?>
             <span style='float:right;font-size:50px'><a href="ajouteenseignant.php"><i class="bi bi-person-plus"></i></a></span>
             <table class="table table-striped  ">
                 <thead>
@@ -120,7 +120,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                         <td class="py-3"><?= $enseignant['matiere1']?></td>
                         <td class="py-3"><?= $enseignant['matiere2']?></td>
                         <td class="py-3"><a class="btn btn-info" href="editenseignant.php?id=<?=$enseignant["id"]?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td class="py-3"><a class="btn btn-danger" href="./delete.php?id=<?=$enseignant["id"]?> "><i class="fa-solid fa-trash"></i></i></a></td>
+                        <td class="py-3"><a class="btn btn-danger" href="delete.php?id=<?=$enseignant["id"]?> "><i class="fa-solid fa-trash"></i></i></a></td>
                     </tr>
                 <?php endforeach;?>
                 </tbody>

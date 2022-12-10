@@ -7,11 +7,8 @@ if($_SESSION['autorisation']==0 || $_SESSION['autorisation']=='1'){
    }
    else{
     $id=$_GET['id'];
-    $sql=$pdo->prepare("DELETE FROM etudiant WHERE id=?");
+    $sql=$pdo->prepare("DELETE FROM enseignant WHERE id=?");
     $sql->execute([$id]);
     header('location:./index.php?succes');
     exit();
    }
-
-
-
