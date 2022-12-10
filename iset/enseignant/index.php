@@ -83,6 +83,11 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                 <button class="btn btn-outline-info mx-1"  id="btn1"><i class="fa-solid fa-list"></i></button>
                 <div class="float-end">
             <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $_SESSION['utilisateur']?> <span class="arrow"><i class="fa-solid fa-arrow-down"></i></span></h3>
+            <?php if(array_key_exists('error',$_GET)): ?>
+                            <div class="alert alert-danger">
+                                 <?=$_GET['error']?>
+                            </div>
+                        <?php endif; ?>
             </div>
     </div> 
            

@@ -1,8 +1,8 @@
 <?php
     
    
-    use PHPMailer\PHPMailer\PHPMailer;
-    include "../../send.php";
+    // use PHPMailer\PHPMailer\PHPMailer;
+    // include "./send.php";
       $error=array();
     if(isset($_POST['send'])){
         require '../../connexion db/db_connect.php';
@@ -45,8 +45,7 @@
         $sql="INSERT INTO inscrit (utilisateur,email,numero,password,password_confirm,clef,courriel,prenom,nom,ville,pays) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $query=$pdo->prepare($sql);
         $query->execute([$utilisateur,$email,$numero,$passHash,$passHash,$clef,$courriel,$prenom,$nom,$ville,$pays]);
-        $email="talelmejri8@gmail.com";
-        sendmail("management",$email,"Welcome","welcometoourschoolmanagement");
+        //sendmail("management",$email,"Welcome","welcometoourschoolmanagement");
 
         header("location:../log/?signup=succes");
         exit();

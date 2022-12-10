@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
     if(empty($_SESSION['utilisateur'])){
         header('location:../../authentification/log/log.phtml');
         exit();
@@ -30,22 +31,25 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
         $sql->execute([$id]);
         $etudiants =$sql->fetch();
         if(isset($_POST['update'])){
-    
-            $cin=$_POST['cin'];
-            $classe=$_POST['classe'];
-            
-            $nom=$_POST['nom'];
-            $prenom=$_POST['prenom'];
-            
-            $tel=$_POST['tel'];
-            $adresse=$_POST['adresse'];
-        
-            $sql = $pdo->prepare("UPDATE etudiant SET  cin='$cin',classe='$classe',nom='$nom',prenom='$prenom',tel='$tel',adresse='$adresse' 
-            WHERE id=?");
-           $sql->execute([$id]);
-           header("location:index.php?update=succes");}
-        
-
+            if($_SESSION['autorisation']=='0'){
+                header("location:index.php?error=autorisation_requis!");
+                exit();
+                }
+                else{
+                    $cin=$_POST['cin'];
+                    $classe=$_POST['classe'];
+                    
+                    $nom=$_POST['nom'];
+                    $prenom=$_POST['prenom'];
+                    
+                    $tel=$_POST['tel'];
+                    $adresse=$_POST['adresse'];
+                
+                    $sql = $pdo->prepare("UPDATE etudiant SET  cin='$cin',classe='$classe',nom='$nom',prenom='$prenom',tel='$tel',adresse='$adresse' 
+                    WHERE id=?");
+                   $sql->execute([$id]);
+                   header("location:index.php?update=succes");}
+                }
     ?>
     <div class="sidebar">
         <div class="sidebar-title">

@@ -95,7 +95,11 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </div>
             <span style='float:right;font-size:50px'><a href="./ajouteretudiant.php"><i class="bi bi-person-plus"></i></a></span>
                 
-                
+            <?php if(array_key_exists('error',$_GET)): ?>
+                            <div class="alert alert-danger">
+                                 <?=$_GET['error']?>
+                            </div>
+                        <?php endif; ?>
             <table class="table table-striped  ">
                 <thead>
                     <tr>
