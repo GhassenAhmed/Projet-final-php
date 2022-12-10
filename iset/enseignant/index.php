@@ -1,5 +1,5 @@
 <?php
-    session_start();
+     session_start();
     if(empty($_SESSION['utilisateur'])){
         header('location:../../authentification/log/log.phtml');
         exit();

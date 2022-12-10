@@ -1,6 +1,5 @@
 <?php
     session_start();
-    var_dump($_SESSION['autorisation']);
     if(empty($_SESSION['utilisateur'])){
         header('location:../../authentification/log/log.phtml');
         exit();

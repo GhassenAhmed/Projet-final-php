@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "../../connexion db/db_connect.php";
-if($_SESSION['autorisation']==0 || $_SESSION['autorisation']=='1'){
+if($_SESSION['autorisation']==0){
     header("location:index.php?error=autorisation_requis!");
     exit();
    }

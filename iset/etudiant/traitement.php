@@ -25,7 +25,11 @@ if(isset($_POST['ajouter'])){
         }
 
 }
-if(isset($_POST['update']) && $_SESSION['autorisation']==2){
+if(isset($_POST['update'])){
+        if($_SESSION['autorisation']==0){
+                header("location:index.php?error=autorisation_requis!");
+                 exit();
+        }else{
                 $cin=$_POST['cin'];
                 $classe=$_POST['classe'];
                 
@@ -39,8 +43,7 @@ if(isset($_POST['update']) && $_SESSION['autorisation']==2){
                 WHERE id=?");
                $sql->execute([$id]);
                header("location:index.php?update=succes");
-        }else{
-                header("location:index.php?error=autorisation_requis!");
-                 exit();
+               exit();
+        }
                  }
 
