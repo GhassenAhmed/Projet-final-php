@@ -123,7 +123,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                         <th scope="col" class="py-3">Departements</th>
                         <th scope="col" class="py-3">Nom Departement</th>
                         <th scope="col" class="py-3">Nombre Salles</th>
-                        <th scope="col" class="py-3">Nombre Etudiants</th>
+                        <th scope="col" class="py-3">Nombre Enseigants</th>
                         
                     </tr>
                 </thead>
