@@ -80,7 +80,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             <div class="p-3 header_admin " style='background:#fff;'> 
                 <button class="btn btn-outline-info mx-1"  id="btn1"><i class="fa-solid fa-list"></i></button>
                 <div class="float-end">
-            <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $_SESSION['utilisateur']?> <span class="arrow"><i class="fa-solid fa-arrow-down"></i></span></h3>
+            <h3><span class="user"><i class="fa-solid fa-user"></i></span><?= $_SESSION['utilisateur']?> <img src="../../authentification/upload/<?= $_SESSION['photo']?>" width="55px" height="55px" style='border-radius:50%;margin-left:2rem;'></img></h3>
             </div>
     </div> 
         <div class="main p-5 ">

@@ -18,9 +18,11 @@ if(isset($_POST['send'])){
         if($res){
             if(password_verify($password,$res['password'])){
             $autorisation=$res['autorisation'];
+            $photo=$res['photo'];
             $_SESSION['utilisateur']=$utilisateur;
             $_SESSION['password']=$password;
             $_SESSION['autorisation']=$autorisation;
+            $_SESSION['photo']=$photo;
             header("location:../../iset/accueil/index.php?utilisateur=".$_SESSION['utilisateur']);
              exit();
          }

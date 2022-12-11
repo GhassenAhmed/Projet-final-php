@@ -1,18 +1,27 @@
 <?php
     
    
-    // use PHPMailer\PHPMailer\PHPMailer;
-    // include "./send.php";
+     //use PHPMailer\PHPMailer\PHPMailer;
+    // include "send.php";
       $error=array();
     if(isset($_POST['send'])){
         require '../../connexion db/db_connect.php';
         extract($_POST);
-
-        if(empty($utilisateur) && empty($password) && empty($password_confirm)&& empty($numero)&& empty($clef)&& empty($courriel)&& empty($prenom)&& empty($nom)&& empty($email)){
+        $photo=$_FILES['photo'];
+        print_r($photo);
+        $photoName=$photo['name'];
+        $photoTmpName=$photo['tmp_name'];
+        $photoSize=$photo['size'];
+        $photoError=$photo['error'];
+        $photoType=$photo['type'];
+        $photoExt=explode('.',$photoName);//explode=> diviser String
+        $photoCheckExt=strtolower(end($photoExt)); // end => get the end of $photoExt => extension
+        $extensions=array('jpg','png','jpeg','jfif');
+        if(empty($utilisateur) && empty($password) && empty($password_confirm)&& empty($numero)&& empty($clef)&& empty($courriel)&& empty($prenom)&& empty($nom)&& empty($email)&&empty($photo)){
            header("location:index.php?error=champsvides");
            exit();
         }
-        else if(empty($utilisateur) || empty($password) || empty($password_confirm) || empty($numero)|| empty($clef)|| empty($courriel)|| empty($prenom)|| empty($nom)||empty($email)){
+        else if(empty($utilisateur) || empty($password) || empty($password_confirm) || empty($numero)|| empty($clef)|| empty($courriel)|| empty($prenom)|| empty($nom)||empty($email)||empty($photo)){
             header("location:index.php?error=champsvides");
             exit();
          }
@@ -31,6 +40,12 @@
         else if($password!==$password_confirm){
             header("location:index.php?error=mdp_invalid&utilisateur=".$utilisateur);
             exit();
+        }elseif(!in_array($photoCheckExt,$extensions)){
+            header("location:index.php?error=photo_type_invalid");
+            exit();
+        }elseif($photoError !==0){
+            header("location:index.php?error=photo_type_invalid");
+            exit();
         }
         else{
         $sql1="SELECT utilisateur FROM inscrit WHERE utilisateur=?";
@@ -41,12 +56,14 @@
             header("location:index.php?error=sqlerror");
             exit();
         }else {
+        
         $passHash=password_hash($_POST['password'],PASSWORD_DEFAULT);
-        $sql="INSERT INTO inscrit (utilisateur,email,numero,password,password_confirm,clef,courriel,prenom,nom,ville,pays) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $photoDetination='../upload/'.$photoName;
+        move_uploaded_file($photoTmpName,$photoDetination);
+        $sql="INSERT INTO inscrit (utilisateur,email,numero,password,password_confirm,clef,courriel,prenom,nom,ville,pays,photo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         $query=$pdo->prepare($sql);
-        $query->execute([$utilisateur,$email,$numero,$passHash,$passHash,$clef,$courriel,$prenom,$nom,$ville,$pays]);
+        $query->execute([$utilisateur,$email,$numero,$passHash,$passHash,$clef,$courriel,$prenom,$nom,$ville,$pays,$photoName]);
         //sendmail("management",$email,"Welcome","welcometoourschoolmanagement");
-
         header("location:../log/?signup=succes");
         exit();
           }
