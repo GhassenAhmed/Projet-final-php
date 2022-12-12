@@ -90,7 +90,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             </div>
 
                 <div class="row p-5 m-5">
-                <form class="form" action="traitement.php" method="post" novalidate>
+                <form class="form" action="traitement.php" method="post" novalidate enctype="multipart/form-data">
                 
                             <div class="row">
 
@@ -190,6 +190,13 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                     </div>
                         </div>
 
+                        <div class="col">
+                                <div class="mb-3">
+                                    <label  class="form-label">Image</label>
+                                    <input type="file" class="form-control"  title="SVP ajouter votre image !" name="photo" >
+                                   
+                                </div> 
+                            </div>
                         
                 </div>
                             

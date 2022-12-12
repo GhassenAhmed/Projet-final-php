@@ -14,7 +14,6 @@ if(isset($_POST['send'])){
         $sql=$pdo->prepare("SELECT * FROM inscrit WHERE utilisateur=?");
         $sql->execute([$utilisateur]);
         $res=$sql->fetch();
-        var_dump($res);
         if($res){
             if(password_verify($password,$res['password'])){
             $autorisation=$res['autorisation'];
