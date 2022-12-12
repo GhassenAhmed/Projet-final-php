@@ -17,7 +17,7 @@ if(isset($_POST['send'])){
         if($res){
             if(password_verify($password,$res['password'])){
             $autorisation=$res['autorisation'];
-            $photo=$res['photo'];
+            $photo=$res['photo']['name'];
             $_SESSION['utilisateur']=$utilisateur;
             $_SESSION['password']=$password;
             $_SESSION['autorisation']=$autorisation;
