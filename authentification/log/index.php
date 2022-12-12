@@ -15,9 +15,9 @@ if(isset($_POST['send'])){
         $sql->execute([$utilisateur]);
         $res=$sql->fetch();
         if($res){
-            if(password_verify($password,$res['password'])){
+             if(password_verify($password,$res['password'])){
             $autorisation=$res['autorisation'];
-            $photo=$res['photo']['name'];
+            $photo=$res['photo'];
             $_SESSION['utilisateur']=$utilisateur;
             $_SESSION['password']=$password;
             $_SESSION['autorisation']=$autorisation;
@@ -29,15 +29,13 @@ if(isset($_POST['send'])){
             header("location:index.php?error=password_incorrect");
             exit();
          }
-        }else{
+         }else{
             header("location:index.php?error=utilisateur_invalid");
             exit();
-        }
+         }
 }
 }
+
+
 
 include "log.phtml";
- 
-            
-
-            

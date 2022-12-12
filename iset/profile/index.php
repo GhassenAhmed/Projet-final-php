@@ -186,18 +186,27 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                         <!-- --------------------password --------------------------->
                                     <div class="mb-3">
                                         <label  class="form-label"  required>votre nouveau Mot de passe</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1"  name="password" placeholder="....">
+                                        <input type="password" class="form-control" id="exampleInputPassword1"  name="password" value="<?=$_SESSION['password']?>">
                                     </div>
                         </div>
 
                         <div class="col">
+                                        <!-- --------------------password --------------------------->
+                                    <div class="mb-3">
+                                        <label  class="form-label"  required>confirmer votre Mot de passe</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1"  name="password_confirm" >
+                                    </div>
+                        </div>
+                        
+                </div>
+                <div class="row">
+                <div class="col">
                                 <div class="mb-3">
                                     <label  class="form-label">Image</label>
                                     <input type="file" class="form-control"  title="SVP ajouter votre image !" name="photo" >
                                    
                                 </div> 
                             </div>
-                        
                 </div>
                             
                             <!-- --------------------button --------------------------->
